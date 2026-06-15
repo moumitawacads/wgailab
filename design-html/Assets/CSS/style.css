@@ -331,7 +331,7 @@ a {
 
 .hero .logos li:before {
    content: '';
-   background: url('../Images/blue-check.png');
+   background: url('../images/blue-check.png');
    width: 15px;
    height: 15px;
 }
@@ -1329,4 +1329,83 @@ a {
       scroll-behavior: auto;
       transition: none !important;
    }
+}
+
+.login-wrapper {
+   z-index: 999999;
+}
+
+.login-wrapper .container {
+   z-index: 2;
+   /* content above */
+}
+
+.login-wrapper .red-ab-left {
+   z-index: 1;
+   left: 0;
+   top: 0;
+   height: 100vh;
+}
+
+.login-wrapper .form-area h2 {
+   font-family: Archivo;
+   font-weight: 600;
+   font-size: 60px;
+   line-height: 100%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+   color: #FFFFFF;
+   margin: 45px 0;
+}
+
+.login-wrapper .form-area form {
+   gap: 20px;
+}
+
+.login-wrapper .form-area form input {
+   border: 1px solid #D87272;
+   border-radius: 8px;
+   padding: 17px 30px;
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #ffffff;
+   background-color: transparent;
+}
+
+.login-wrapper .form-area form input::placeholder {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #FFD6E0;
+}
+
+.login-wrapper .form-area form .link-area label {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #FFADC0;
+}
+
+.login-wrapper .form-area form .link-area input[type="checkbox"] {
+   appearance: none;
+   -webkit-appearance: none;
+   width: 18px;
+   height: 18px;
+   border: 1px solid #FFC0C0;
+   background: transparent;
+   border-radius: 4px;
+   cursor: pointer;
+   position: relative;
+   padding: 0;
+}
+
+.login-wrapper .form-area form .link-area input[type="checkbox"]:checked{
+    accent-color: #FFC0C0;
 }
