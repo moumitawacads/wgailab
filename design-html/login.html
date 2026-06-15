@@ -25,19 +25,22 @@
 </head>
 
 <body>
-    <div class="login-wrapper position-relative overflow-hidden">
+    <div class="login-wrapper position-relative">
         <img src="assets/images/ab-red.png" alt="" class="position-absolute red-ab-left">
         <div class="container position-relative">
-            <div class="row align-items-center justify-content-between">
+            <div class="row align-items-center justify-content-between vh-100">
                 <div class="col-md-3">
                     <div class="form-area">
                         <a href="#"><img src="assets/images/login-logo.png" alt=""></a>
                         <h2>Welcome back!</h2>
                         <form action="" class="d-flex flex-column">
                             <input type="text" placeholder="Email Address">
-                            <input type="password" placeholder="Password">
+                            <div class="pass-field position-relative w-100">
+                                 <input type="password" placeholder="Password" class="w-100">
+                                 <img src="assets/images/eye.png" alt="" class="position-absolute">
+                            </div>
                             <div class="link-area d-flex align-items-center justify-content-between">
-                                <div class="label-input">
+                                <div class="label-input d-flex align-items-center">
                                     <input type="checkbox">
                                     <label for="">Remember me</label>
                                 </div>
@@ -52,10 +55,21 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="assets/images/ai-login.png" alt="" class="w-100">
+                    <div class="right-wrap">
+                        <div class="img-area position-relative">
+                            <img src="assets/images/ai-login.png" alt="" class="w-100 main-img">
+                            <video class="screen-video" autoplay muted loop playsinline>
+                                <source src="assets/images/ai-login-video.mp4" type="video/mp4">
+                            </video>
+                            <img src="assets/images/cloud.png" alt="" class="cloud cloud-1">
+                            <img src="assets/images/cloud.png" alt="" class="cloud cloud-2">
+                        </div>
+                        <p>© Copyright AI Lab. 2025.</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <img src="assets/images/ab-red-right.png" alt="" class="position-absolute red-ab-right">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
