@@ -26,9 +26,9 @@ use App\Http\Controllers\BusinessPlanController;
 use App\Http\Controllers\ResourceLibraryController;
 use App\Http\Controllers\ChecklistController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('frontend.pages.home');
+});
 
 Route::middleware(['auth', 'role:admin,superadmin,workforce_development'])->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'loadadminDashboard'])->name('admin.dashboard');
@@ -171,19 +171,19 @@ Route::middleware(['auth', 'role:instructor'])->prefix('instructor')->group(func
 Route::get('/states/{country}', [UserController::class, 'getStates']);
 Route::get('/cities/{state}', [UserController::class, 'getCities']);
 
-Route::get('/', function () {
-    if (auth()->check()) {
-        $user = auth()->user();
-        if (in_array($user->role, ['admin', 'superadmin', 'workforce_development'])) {
-            return redirect()->route('admin.dashboard');
-        } elseif ($user->role == 'se') {
-            return redirect()->route('se.dashboard');
-        } elseif ($user->role == 'instructor') {
-            return redirect()->route('instructor.dashboard');
-        }
-    }
-    return app(LoginController::class)->showLoginForm();
-})->name('login');
+// Route::get('/', function () {
+//     if (auth()->check()) {
+//         $user = auth()->user();
+//         if (in_array($user->role, ['admin', 'superadmin', 'workforce_development'])) {
+//             return redirect()->route('admin.dashboard');
+//         } elseif ($user->role == 'se') {
+//             return redirect()->route('se.dashboard');
+//         } elseif ($user->role == 'instructor') {
+//             return redirect()->route('instructor.dashboard');
+//         }
+//     }
+//     return app(LoginController::class)->showLoginForm();
+// })->name('login');
 Route::get('/admin/login', function () {
     if (auth()->check()) {
         $user = auth()->user();
