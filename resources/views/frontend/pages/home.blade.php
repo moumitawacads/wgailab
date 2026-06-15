@@ -16,8 +16,19 @@
                     <p>The AI Lab delivers practical, instructor-led training that helps businesses
                         integrate AI into real operations — not someday, but today.</p>
                     <div class="actions d-flex flex-wrap">
-                        <a href="#cta" class="primary-btn">Enroll Your Team</a>
-                        <a href="#cta" class="sec-btn">Request a Demo</a>
+                        {{-- <a href="#cta" class="primary-btn">Enroll Your Team</a> --}}
+                        <a href="javascript:void(0)"
+                            class="primary-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#requestTeamModal">
+                            Enroll Your Team
+                        </a>
+                        <a href="javascript:void(0)"
+                            class="sec-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#requestDemoModal">
+                            Request a Demo
+                        </a>
                     </div>
                     <ul class="logos list-unstyled d-flex flex-wrap">
                         <li>Instructor Led</li>
@@ -56,7 +67,13 @@
                         applying tools directly to your business challenges.</p>
                     <p class="highlight">This is hands-on, business-ready AI training that accelerates transformation.
                     </p>
-                    <a href="#cta" class="primary-btn">Enroll Now</a>
+                    {{-- <a href="#cta" class="primary-btn">Enroll Now</a> --}}
+                    <a href="javascript:void(0)"
+                            class="primary-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#requestTeamModal">
+                            Enroll Your Team
+                        </a>
                 </div>
                 <div class="col-lg-6">
                     <div class="panel">
@@ -221,8 +238,19 @@
                 </div>
             </div>
             <div class="actions d-flex flex-wrap justify-content-center align-items-center">
-                <a href="#cta" class="primary-btn">Enroll Your Team</a>
-                <a href="#cta" class="btn-dark">Request a Demo</a>
+                {{-- <a href="#cta" class="primary-btn">Enroll Your Team</a> --}}
+                <a href="javascript:void(0)"
+                            class="primary-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#requestTeamModal">
+                            Enroll Your Team
+                        </a>
+                <a href="javascript:void(0)"
+                            class="btn-dark"
+                            data-bs-toggle="modal"
+                            data-bs-target="#requestDemoModal">
+                            Request a Demo
+                </a>
             </div>
         </div>
     </section>
@@ -338,8 +366,20 @@
                 </div>
             </div>
             <div class="actions d-flex flex-wrap justify-content-center align-items-center">
-                <a href="#cta" class="primary-btn">Enroll Your Team</a>
-                <a href="#cta" class="btn-dark">Request a Demo</a>
+                {{-- <a href="#cta" class="primary-btn">Enroll Your Team</a> --}}
+                {{-- <a href="#cta" class="btn-dark">Request a Demo</a> --}}
+                <a href="javascript:void(0)"
+                            class="primary-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#requestTeamModal">
+                            Enroll Your Team
+                        </a>
+                <a href="javascript:void(0)"
+                class="sec-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#requestDemoModal">
+                Request a Demo
+                </a>
             </div>
         </div>
     </section>
@@ -396,11 +436,109 @@
                 team with the skills to use AI with confidence and purpose.</p>
             <p class="sub">Enroll your team or request a demo and see what the AI Lab can do.</p>
             <div class="actions d-flex flex-wrap justify-content-center">
-                <a href="#" class="btn-light">Enroll Your Team</a>
-                <a href="#" class="btn-outline">Request a Demo</a>
+                {{-- <a href="#" class="btn-light">Enroll Your Team</a> --}}
+                <a href="javascript:void(0)"
+                            class="btn-light"
+                            data-bs-toggle="modal"
+                            data-bs-target="#requestTeamModal">
+                            Enroll Your Team
+                        </a>
+                {{-- <a href="#" class="btn-outline">Request a Demo</a> --}}
+                <a href="javascript:void(0)"
+                class="btn-outline"
+                data-bs-toggle="modal"
+                data-bs-target="#requestDemoModal">
+                Request a Demo
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- Request Demo Modal -->
+<div class="modal fade" id="requestDemoModal" tabindex="-1" aria-labelledby="requestDemoModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <iframe
+                src="https://link.wacads.com/widget/form/L5mozGiNfrocko0Gu0by"
+                style="width:100%;height:100%;border:none;border-radius:4px"
+                id="inline-L5mozGiNfrocko0Gu0by" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Wacads AI Lab - Request for Demo"
+                data-height="714"
+                data-layout-iframe-id="inline-L5mozGiNfrocko0Gu0by"
+                data-form-id="L5mozGiNfrocko0Gu0by"
+                title="Wacads AI Lab - Request for Demo"
+                
+                    >
+            </iframe>
+            <script src="https://link.wacads.com/js/form_embed.js"></script>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <!-- Enroll Your Team Modal -->
+<div class="modal fade" id="requestTeamModal" tabindex="-1" aria-labelledby="requestTeamModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <iframe
+                    src="https://link.wacads.com/widget/form/qqpyhKrtA0ms9uwBrZTH"
+                    style="width:100%;height:100%;border:none;border-radius:4px"
+                    id="inline-qqpyhKrtA0ms9uwBrZTH" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="WG AI Lab - Enroll your Team"
+                    data-height="733"
+                    data-layout-iframe-id="inline-qqpyhKrtA0ms9uwBrZTH"
+                    data-form-id="qqpyhKrtA0ms9uwBrZTH"
+                    title="WG AI Lab - Enroll your Team"
+                    
+                        >
+                </iframe>
+                <script src="https://link.wacads.com/js/form_embed.js"></script>
+                
+            
+            </div>
+
+        </div>
+    </div>
+</div>
     
 @endsection
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
