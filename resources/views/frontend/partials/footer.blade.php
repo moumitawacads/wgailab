@@ -2,7 +2,7 @@
     <footer class="site-footer">
         <div class="container text-center">
             <a href="#" class="brand d-inline-flex align-items-end">
-                <img src="Assets/Images/ai-lab-footer-logo.png" alt="">
+                <img src="{{ asset('frontend/images/ai-lab-footer-logo.png')}}" alt="">
             </a>
             <ul class="d-flex flex-wrap justify-content-center list-unstyled">
                 <li><a href="#about">About the Lab</a></li>

@@ -1,7 +1,7 @@
  <header class="site-header">
         <nav class="container d-flex align-items-center justify-content-between">
             <a href="#" class="brand d-flex align-items-end">
-                <img src="Assets/Images/ai-lab-logo.png" alt="">
+                <img src="{{ asset('frontend/images/ai-lab-logo.png')}}" alt="">
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
