@@ -23,22 +23,31 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        // Check if remember me is checked
+        $remember = $request->has('remember') && $request->remember == '1';
 
-            $user = Auth::user();
+        if (Auth::attempt($credentials, $remember)) { // Add $remember as second parameter
+            if (Auth::user()->status == 1) {
+                $request->session()->regenerate();
+                $user = Auth::user();
 
-            // dd($user->role);
-
-            return match ($user->role) {
-                'superadmin' => redirect()->route('admin.dashboard'),
-                'admin' => redirect()->route('admin.dashboard'),
-                'se' => redirect()->route('se.dashboard'),
-                'instructor' => redirect()->route('instructor.dashboard'),
-                default => redirect('/'),
-            };
+                return match ($user->role) {
+                    'superadmin' => redirect()->route('admin.dashboard'),
+                    'admin' => redirect()->route('admin.dashboard'),
+                    'workforce_development' => redirect()->route('admin.dashboard'),
+                    'se' => redirect()->route('se.dashboard'),
+                    'instructor' => redirect()->route('instructor.dashboard'),
+                    default => redirect('/'),
+                };
+            } else {
+                Auth::logout();
+                return back()->withErrors([
+                    'email' => 'Your account is inactive. Please contact administrator.',
+                ])->onlyInput('email');
+            }
         }
 
+        // Authentication failed
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
