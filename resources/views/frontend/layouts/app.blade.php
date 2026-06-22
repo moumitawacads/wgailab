@@ -26,11 +26,12 @@
 </head>
 <body>
 
-    @include('frontend.partials.header')
+        @include('frontend.partials.header')
 
-    @yield('content')
+        @yield('content')
 
-    @include('frontend.partials.footer')
+        @include('frontend.partials.footer')
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -331,7 +331,7 @@ a {
 
 .hero .logos li:before {
    content: '';
-   background: url('../Images/blue-check.png');
+   background: url('../images/blue-check.png');
    width: 15px;
    height: 15px;
 }
@@ -1329,4 +1329,263 @@ a {
       scroll-behavior: auto;
       transition: none !important;
    }
+}
+
+.login-wrapper {
+   z-index: 999999;
+   height: 100vh;
+}
+
+.login-wrapper .container {
+   z-index: 2;
+   /* content above */
+}
+
+.login-wrapper .red-ab-left {
+   z-index: 1;
+   left: 0;
+   top: 0;
+   height: 100%;
+}
+
+.login-wrapper .red-ab-right {
+   z-index: 1;
+   right: 0;
+   top: -40px;
+   height: 100%;
+}
+
+.login-wrapper .form-area h2 {
+   font-family: Archivo;
+   font-weight: 600;
+   font-size: 60px;
+   line-height: 100%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+   color: #FFFFFF;
+   margin: 45px 0;
+}
+
+.login-wrapper .form-area form {
+   gap: 20px;
+}
+
+.login-wrapper .form-area form input {
+   border: 1px solid #D87272;
+   border-radius: 8px;
+   padding: 17px 30px;
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #ffffff;
+   background-color: transparent;
+}
+
+.login-wrapper .form-area form .pass-field img {
+   right: 20px;
+   top: 20px;
+   cursor: pointer;
+}
+
+.login-wrapper .form-area form input::placeholder {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #FFD6E0;
+}
+
+.login-wrapper .form-area form .link-area .label-input {
+   gap: 13px;
+}
+
+.login-wrapper .form-area form .link-area label {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #FFADC0;
+}
+
+.login-wrapper .form-area form .link-area input[type="checkbox"] {
+   accent-color: #000;
+   width: 18px;
+   height: 18px;
+   border: 1px solid #FFC0C0;
+   background: transparent;
+   border-radius: 4px;
+   cursor: pointer;
+   position: relative;
+   margin: 0;
+   padding: 0;
+}
+
+.login-wrapper .form-area form .link-area a {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #FFADC0;
+}
+
+.login-wrapper .form-area form button {
+   background: #FFFFFF;
+   border-radius: 9px;
+   padding: 17px 0;
+   width: 100%;
+   border: none;
+   font-family: Mulish;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #BA012D;
+   margin-bottom: 45px;
+}
+
+.login-wrapper .form-area .bottom-links {
+   gap: 6px;
+}
+
+.login-wrapper .form-area .bottom-links p {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #FFADC0;
+   margin: 0;
+}
+
+.login-wrapper .form-area .bottom-links a {
+   font-family: Albert Sans;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 0%;
+   color: #FFFFFF;
+}
+
+.login-wrapper .right-wrap p {
+   font-family: Inter;
+   font-weight: 400;
+   font-size: 10px;
+   line-height: 140%;
+   letter-spacing: 0%;
+   color: #444444;
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   padding-top: 75px;
+   margin: 0;
+}
+
+.login-wrapper .right-wrap .main-img {
+   max-width: 580px;
+}
+
+.img-area {
+   position: relative;
+   overflow: hidden;
+   /* keeps clouds from spilling outside the artwork */
+}
+
+.cloud {
+   position: absolute;
+   width: 72px;
+   /* adjust to match cloud size in your design */
+   pointer-events: none;
+}
+
+.cloud-1 {
+   top: 0;
+   left: 60px;
+   width: 72px;
+   animation: cloud-1-slide 3s ease-in-out infinite;
+}
+
+@keyframes cloud-1-slide {
+   0% {
+      transform: translateX(0);
+      opacity: 0;
+   }
+
+   15% {
+      opacity: 1;
+   }
+
+   45% {
+      transform: translateX(100px);
+      opacity: 1;
+   }
+
+   55% {
+      transform: translateX(100px);
+      opacity: 1;
+   }
+
+   85% {
+      transform: translateX(0);
+      opacity: 0;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 0;
+   }
+}
+
+.cloud-2 {
+   top: 40px;
+   right: 0;
+   width: 72px;
+   animation: cloud-2-slide 3s ease-in-out infinite;
+}
+
+@keyframes cloud-2-slide {
+   0% {
+      transform: translateX(0);
+      opacity: 0;
+   }
+
+   15% {
+      opacity: 1;
+   }
+
+   45% {
+      transform: translateX(-100px);
+      opacity: 1;
+   }
+
+   55% {
+      transform: translateX(-100px);
+      opacity: 1;
+   }
+
+   85% {
+      transform: translateX(0);
+      opacity: 0;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 0;
+   }
+}
+
+.screen-video {
+   position: absolute;
+   top: 30%;
+   left: 31%;
+   width: 25%;
+   height: 21%;
+   object-fit: cover;
+   border-radius: 4px;
+   transform: rotate(30deg);
+   z-index: 1;
 }
