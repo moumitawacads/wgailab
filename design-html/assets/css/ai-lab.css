@@ -1086,7 +1086,45 @@ a {
 
 
 /*RESPONSIVE*/
+@media (max-width:1920px) {
+   .login-wrapper .red-ab-left {
+      width: 50%;
+   }
+}
+
+@media (max-width:1366px) {
+   .screen-video {
+      top: 30% !important;
+      left: 34% !important;
+      width: 28% !important;
+      height: 21% !important;
+   }
+}
+
 @media (max-width:1024px) {
+   .screen-video {
+      top: 31% !important;
+      left: 43% !important;
+      width: 13% !important;
+      height: 21% !important;
+   }
+
+   .login-wrapper {
+      background: #bb012e;
+   }
+
+   .login-wrapper .right-wrap .main-img {
+      max-width: 450px !important;
+      margin: 0 auto;
+   }
+
+   .login-wrapper .red-ab-left {
+      display: none;
+   }
+
+   .login-wrapper .red-ab-right {
+      display: none;
+   }
 
    .hero h1 {
       width: 600px;
@@ -1099,7 +1137,23 @@ a {
 
 @media (max-width:991.98px) {
 
-  
+   .login-wrapper .right-wrap .main-img {
+      max-width: 650px !important;
+      margin: 0 auto;
+   }
+
+   .login-wrapper {
+      background: #bb012e;
+   }
+
+   .login-wrapper .red-ab-left {
+      display: none;
+   }
+
+   .login-wrapper .red-ab-right {
+      display: none;
+   }
+
    .site-header .nav-toggle {
       display: block;
    }
@@ -1130,15 +1184,51 @@ a {
       margin: 8px 24px;
       text-align: center;
    }
+
+   .login-wrapper .right-wrap .main-img {
+      max-width: 400px !important;
+      margin: 0 auto;
+   }
+
+   .screen-video {
+      top: 30% !important;
+      left: 41% !important;
+      width: 16% !important;
+   }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+   .form-area {
+      max-width: 500px;
+      margin: 0 auto;
+   }
 }
 
 @media (max-width:767.98px) {
 
-    .login-wrapper .red-ab-right{
+   .login-wrapper .form-area .bottom-links {
+      margin-bottom: 10px;
+   }
+
+   .login-wrapper p.footer-txt{
+      text-align: center;
+      position: relative !important;
+      padding-bottom: 10px;
+   }
+
+   .login-wrapper .red-ab-right {
       display: none;
    }
 
-    .login-wrapper .red-ab-left{
+   .login-wrapper .right-wrap .main-img {
+      display: none;
+   }
+
+   .login-wrapper {
+      background: #bb012e;
+   }
+
+   .login-wrapper .red-ab-left {
       display: none;
    }
 
@@ -1343,7 +1433,7 @@ a {
 
 .login-wrapper {
    z-index: 999999;
-   height: 100vh;
+   min-height: 100vh;
 }
 
 .login-wrapper .container {
@@ -1492,6 +1582,19 @@ a {
    display: flex;
    justify-content: flex-end;
    padding-top: 75px;
+   margin: 0;
+}
+
+.login-wrapper p.footer-txt {
+   font-family: Inter;
+   font-weight: 400;
+   font-size: 10px;
+   line-height: 140%;
+   letter-spacing: 0%;
+   color: #444444;
+   position: absolute;
+   right: 0;
+   bottom: 10px;
    margin: 0;
 }
 
