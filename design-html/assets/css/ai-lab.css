@@ -1098,6 +1098,8 @@ a {
 }
 
 @media (max-width:991.98px) {
+
+  
    .site-header .nav-toggle {
       display: block;
    }
@@ -1131,6 +1133,14 @@ a {
 }
 
 @media (max-width:767.98px) {
+
+    .login-wrapper .red-ab-right{
+      display: none;
+   }
+
+    .login-wrapper .red-ab-left{
+      display: none;
+   }
 
    .site-header {
       padding-top: 10px;
