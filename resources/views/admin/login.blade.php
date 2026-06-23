@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.admin')
 @section('content')
 
 <div class="login-wrapper position-relative">
