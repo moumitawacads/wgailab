@@ -1,7 +1,7 @@
 <nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="javascript:void">
-					<img src="{{ asset('assets/img/images/urz-logo.png') }}">
+					<img src="{{ asset('assets/img/images/ai-lab-logo.png') }}">
 				</a>
 
 				<ul class="sidebar-nav">
