@@ -9,7 +9,7 @@ body {
 }
 
 .sidebar-dropdown a{
-    padding: 5px !important;
+    padding: 10px !important;
 }
 
 .sidebar-dropdown li{
@@ -55,7 +55,7 @@ body {
     line-height: 100% !important;
     letter-spacing: 0px !important;
     text-align: center !important;
-    background: #9ECB3C !important;
+    background: #bb012e !important;
     color: #000000 !important;
     isplay: flex !important;
     justify-content: center !important;
@@ -78,7 +78,7 @@ body {
 }
 
 .dash-banner-wrapper {
-    background: #9ECB3C;
+    background: #bb012e;
     border-radius: 16px;
     padding: 40px 30px;
 }
@@ -124,7 +124,7 @@ body {
 }
 
 .domework-wrapper .banner-wrapper {
-    background: #9ECB3C;
+    background: #bb012e;
     border-radius: 16px;
     /* margin: 30px; */
 }
@@ -202,7 +202,7 @@ body {
 
 .domework-wrapper .domework-cnt-wrapper .domework-cnt .btn-wrapper button.active {
     color: #050505;
-    background: #9ECB3C;
+    background: #bb012e;
     font-weight: 700;
 }
 
@@ -410,8 +410,8 @@ body {
     line-height: 100%;
     letter-spacing: 0px;
     text-align: center;
-    color: #000000;
-    background: #9ECB3C;
+    color: #ffffff;
+    background: #bb012e;
     box-shadow: 0px 6px 8.6px -4px #00000040;
     border-radius: 5px;
     padding: 14px 30px;
@@ -532,7 +532,7 @@ body {
 
 .domework-wrapper .domework-cnt-wrapper .dome-custom-tabs button.active {
     background: #070707;
-    color: #9ECB3C;
+    color: #bb012e;
     border: none;
 }
 
@@ -995,7 +995,7 @@ body {
 }
 
 .main-btn {
-    background: #9ECB3C !important;
+    background: #bb012e !important;
     border: none !important;
     border-radius: 40px !important;
     font-family: Mulish !important;
@@ -1024,9 +1024,17 @@ body {
 }
 
 .bg-green {
-    background-color: #F9FFEA !important;
-    border: 1px solid #9ECB3C3D !important;
+    background-color: #bb012e30 !important;
+    border: 1px solid #bb012e !important;
     color: #000000 !important;
+}
+
+.stat svg{
+    color: #bb012e !important;
+}
+
+.nav-item .indicator{
+    color: #ffffff !important;
 }
 
 .bg-first {
@@ -1085,23 +1093,23 @@ body {
 }
 
 .sidebar-item.active .sidebar-link {
-    background: #000000 !important;
+    background: #bb012e !important;
     border-radius: 8px;
-    color: #9ECB3C !important;
+    color: #ffffff !important;
 }
 
 .sidebar-item.active .sidebar-link svg {
-    color: #9ECB3C !important;
+    color: #ffffff !important;
 }
 
 .sidebar-item .sidebar-link:hover {
-    background: #000000 !important;
+    background: #bb012e !important;
     border-radius: 8px;
-    color: #9ECB3C !important;
+    color: #ffffff !important;
 }
 
 .sidebar-item .sidebar-link:hover svg {
-    color: #9ECB3C !important;
+    color: #ffffff !important;
 }
 
 .wrapper {
@@ -1110,8 +1118,8 @@ body {
 
 .main {
     width: calc(100% - 278px);
-    background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
-        url(../img/images/dom-body-bg.png);
+    /* background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+        url(../img/images/dom-body-bg.png); */
 }
 
 .sidebar.collapsed {
@@ -1150,14 +1158,18 @@ body {
 }
 
 .notification-icon {
-    background: #F9FFEA;
-    border: 1px solid #9ECB3C3D;
+    background: #bb012e30 !important;
+    border: 1px solid #bb012e;
     border-radius: 100%;
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.notification-icon svg{
+    color: #bb012e !important;
 }
 
 .notification-icon span {
@@ -1167,7 +1179,7 @@ body {
     line-height: 100% !important;
     letter-spacing: 0px !important;
     text-align: center !important;
-    background: #9ECB3C !important;
+    background: #bb012e !important;
     color: #000000 !important;
     height: 20px !important;
     width: 20px !important;
@@ -1177,7 +1189,7 @@ body {
 }
 
 .status-active {
-    background: #9ECB3C !important;
+    background: #bb012e !important;
 }
 
 footer.footer {
@@ -1318,7 +1330,7 @@ input:disabled {
 .form-check-input[type="radio"]:checked {
     padding: 0 !important;
     background-color: transparent !important;
-    border: 5px solid #9ECB3C !important;
+    border: 5px solid #bb012e !important;
 }
 
 .action-check {
@@ -1540,7 +1552,7 @@ select {
 
 .dash-card a {
     text-decoration: none;
-    color: #9ECB3C !important;
+    color: #bb012e !important;
     font-family: Mulish;
 }
 
@@ -1820,7 +1832,7 @@ select {
     line-height: 100% !important;
     letter-spacing: 0% !important;
     text-align: center !important;
-    color: #9ECB3C !important;
+    color: #bb012e !important;
 }
 
 .down-btn {
@@ -1862,8 +1874,8 @@ select {
 }
 
 .warn-txt-success {
-    color: #9ecb3c !important;
-    border: 1px solid #9ecb3c !important;
+    color: #bb012e !important;
+    border: 1px solid #bb012e !important;
     padding: 5px !important;
     border-radius: 5px !important;
     font-weight: 700 !important;
