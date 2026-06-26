@@ -283,9 +283,9 @@ a {
    padding-block: 140px;
 }
 
-.hero .eyebrow {
+/* .hero .eyebrow {
    margin-bottom: 14px;
-}
+} */
 
 .hero h1 {
    font-family: Archivo;
@@ -1086,6 +1086,15 @@ a {
 
 
 /*RESPONSIVE*/
+
+@media (max-width:1366px) {
+
+   .about h2 {
+      font-size: 48px;
+      width: 550px;
+   }
+}
+
 @media (max-width:1920px) {
    .login-wrapper .red-ab-left {
       width: 50%;
@@ -1210,7 +1219,7 @@ a {
       margin-bottom: 10px;
    }
 
-   .login-wrapper p.footer-txt{
+   .login-wrapper p.footer-txt {
       text-align: center;
       position: relative !important;
       padding-bottom: 10px;
