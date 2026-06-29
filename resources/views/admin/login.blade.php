@@ -7,7 +7,7 @@
 		<div class="row align-items-center justify-content-between vh-100">
 			<div class="col-md-3">
 				<div class="form-area">
-					<a href="https://wacadsgroup.com/ai-lab"><img src="{{asset('frontend/images/login-logo.png')}}" alt=""></a>
+					<a href="https://wacadsgroup.com/ai-workflow-lab"><img src="{{asset('frontend/images/login-logo.png')}}" alt=""></a>
 					<h2>Welcome back!</h2>
 					@if(session('status'))
 						<div class="alert alert-success" id="success-alert" style="background-color: #d1fae5; color: #065f46; padding: 1rem; border: 1px solid #10b981; border-radius: 0.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
