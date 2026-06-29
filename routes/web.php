@@ -27,6 +27,7 @@ use App\Http\Controllers\ResourceLibraryController;
 use App\Http\Controllers\ChecklistController;
 
 Route::get('/', function () {
+    // return redirect('https://wacadsgroup.com/ai-workflow-lab', 301);
     return view('frontend.pages.home');
 });
 
