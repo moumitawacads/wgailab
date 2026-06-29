@@ -278,9 +278,9 @@ a {
 
 /*HERO*/
 .hero {
-   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%);
+   /* background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%); */
    overflow: hidden;
-   padding-block: 140px;
+   /* padding-block: 140px; */
 }
 
 /* .hero .eyebrow {
@@ -1214,6 +1214,23 @@ a {
 }
 
 @media (max-width:767.98px) {
+   .hero .heroSwiper .orbit-slide {
+      padding: 40px 0 !important;
+      height: auto !important;
+   }
+
+   .hero .heroSwiper .blue-banner-wrap .left-cnt p{
+      font-size: 15px !important;
+   }
+
+   .hero .heroSwiper .blue-banner-wrap .left-cnt h2{
+      font-size: 40px !important;
+   }
+
+   .hero .heroSwiper .blue-banner-wrap {
+      padding: 40px 0 !important;
+      height: auto !important;
+   }
 
    .login-wrapper .form-area .bottom-links {
       margin-bottom: 10px;
@@ -1242,7 +1259,7 @@ a {
    }
 
    .site-header {
-      padding-top: 10px;
+      padding-top: 0;
    }
 
    .site-header nav {
@@ -1272,8 +1289,12 @@ a {
    }
 
    .hero .logos {
-      flex-direction: column;
+      /* flex-direction: column; */
       align-items: center;
+   }
+
+   .hero .heroSwiper .blue-banner-wrap .left-cnt h3{
+      font-size: 17px !important;
    }
 
    .hero .orbit {
@@ -1318,6 +1339,10 @@ a {
 }
 
 @media (max-width:575.98px) {
+
+   .hero .heroSwiper .orbit-slide {
+      padding-top: 0;
+   }
 
    .hero .orbit {
       margin-top: 50px;
@@ -1725,10 +1750,21 @@ a {
 }
 
 .hero .heroSwiper .blue-banner-wrap {
-   background: #001139;
-   padding: 100px 60px;
+   background: radial-gradient(69.85% 258.82% at 87.33% 54.28%, #D5E5F9 40.38%, #D5E5F9 100%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+   ;
    position: relative;
+   padding-top: 140px;
+   height: 800px;
 }
+
+.hero .heroSwiper .orbit-slide {
+   position: relative;
+   padding-top: 140px;
+   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%);
+   height: 800px;
+}
+
 
 .hero .heroSwiper .blue-banner-wrap .main-img {
    position: relative;
@@ -1744,7 +1780,7 @@ a {
 
 .hero .heroSwiper .blue-banner-wrap .round-bg {
    position: absolute;
-   top: 0;
+   top: 80px;
    right: 0;
    z-index: 0;
 }
@@ -1757,7 +1793,7 @@ a {
    font-size: 65px;
    line-height: 115.99999999999999%;
    letter-spacing: 0%;
-   color: #FFFFFF;
+   color: #000000;
 }
 
 .hero .heroSwiper .blue-banner-wrap .left-cnt h2 span {
@@ -1775,8 +1811,8 @@ a {
    font-size: 20px;
    line-height: 115.99999999999999%;
    letter-spacing: 3%;
-   color: #AED2FF;
-   background: #29486F99;
+   color: #000000;
+   background: #A8CAF3;
    border: 1px solid #5D7BD0;
    border-radius: 9px;
    width: fit-content;
@@ -1789,7 +1825,7 @@ a {
    font-size: 18px;
    line-height: 167%;
    letter-spacing: 0%;
-   color: #FFFFFF;
+   color: #000000;
    margin: 20px 0;
 }
 
