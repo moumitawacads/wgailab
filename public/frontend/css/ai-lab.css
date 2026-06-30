@@ -1742,6 +1742,7 @@ a {
 
 .heroSwiper {
    width: 100%;
+   height: 800px;
 }
 
 .heroSwiper .swiper-slide {
