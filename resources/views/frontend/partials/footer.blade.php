@@ -12,6 +12,6 @@
             </ul>
         </div>
         <div class="footer-bottom">
-            <p class="copy">© AI Lab for Business 2026</p>
+            <p class="copy">© AI Workflow Lab for Business 2026</p>
         </div>
     </footer>

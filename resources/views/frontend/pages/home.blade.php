@@ -6,50 +6,88 @@
 
      <!-- HERO -->
     <section class="hero">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 order-2 order-lg-1">
-                    <span class="eyebrow">AI-Powered Business Transformation</span>
-                    <h1>AI Lab for Business Transform Your Operations</h1>
-                    <p>Give your team the skills to automate workflows, streamline processes, and
-                        unlock new levels of efficiency.</p>
-                    <p>The AI Lab delivers practical, instructor-led training that helps businesses
-                        integrate AI into real operations — not someday, but today.</p>
-                    <div class="actions d-flex flex-wrap">
-                        {{-- <a href="#cta" class="primary-btn">Enroll Your Team</a> --}}
-                        <a href="javascript:void(0)"
-                            class="primary-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#requestTeamModal">
-                            Enroll Your Team
-                        </a>
-                        <a href="javascript:void(0)"
-                            class="sec-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#requestDemoModal">
-                            Request a Demo
-                        </a>
-                    </div>
-                    <ul class="logos list-unstyled d-flex flex-wrap">
-                        <li>Instructor Led</li>
-                        <li>Practical Training</li>
-                        <li>Business Focused</li>
-                        <li>Immediate ROI</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center align-items-center">
-                    <div class="orbit">
-                        <div class="core d-flex flex-column align-items-center justify-content-center">
-                            <img src="{{ asset('frontend/images/hi-middle.png') }}" alt="">
-                            <span>AI Engine</span>
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="orbit-slide">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 order-2 order-lg-1">
+                                    <span class="eyebrow">AI-Powered Business Transformation</span>
+                                    <h1>AI Lab for Business Transform Your Operations</h1>
+                                    <p>Give your team the skills to automate workflows, streamline processes, and
+                                        unlock new levels of efficiency.</p>
+                                    <p>The AI Lab delivers practical, instructor-led training that helps businesses
+                                        integrate AI into real operations — not someday, but today.</p>
+                                    <div class="actions d-flex flex-wrap">
+                                        {{-- <a href="#cta" class="primary-btn">Enroll Your Team</a> --}}
+                                        <a href="javascript:void(0)"
+                                            class="primary-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#requestTeamModal">
+                                            Enroll Your Team
+                                        </a>
+                                        <a href="javascript:void(0)"
+                                            class="sec-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#requestDemoModal">
+                                            Request a Demo
+                                        </a>
+                                    </div>
+                                    <ul class="logos list-unstyled d-flex flex-wrap">
+                                        <li>Instructor Led</li>
+                                        <li>Practical Training</li>
+                                        <li>Business Focused</li>
+                                        <li>Immediate ROI</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center align-items-center">
+                                    <div class="orbit">
+                                        <div class="core d-flex flex-column align-items-center justify-content-center">
+                                            <img src="{{ asset('frontend/images/hi-middle.png') }}" alt="">
+                                            <span>AI Engine</span>
+                                        </div>
+                                        <div class="node node-top"><img src="{{ asset('frontend/images/hi1.png')}}" alt=""> Operations</div>
+                                        <div class="node node-left"><img src="{{ asset('frontend/images/hi4.png')}}" alt=""> Workflow</div>
+                                        <div class="node node-right"><img src="{{ asset('frontend/images/hi2.png')}}" alt=""> AI Skills</div>
+                                        <div class="node node-bottom"><img src="{{ asset('frontend/images/hi3.png')}}" alt=""> Finance</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="node node-top"><img src="{{ asset('frontend/images/hi1.png')}}" alt=""> Operations</div>
-                        <div class="node node-left"><img src="{{ asset('frontend/images/hi4.png')}}" alt=""> Workflow</div>
-                        <div class="node node-right"><img src="{{ asset('frontend/images/hi2.png')}}" alt=""> AI Skills</div>
-                        <div class="node node-bottom"><img src="{{ asset('frontend/images/hi3.png')}}" alt=""> Finance</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="blue-banner-wrap">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-md-6">
+                                    <div class="left-cnt">
+                                        <h2>AI Workflow Lab</h2>
+                                        <h3>Turn Everyday Tasks Into AI-Powered Workflows</h3>
+                                        <p>Whether you're a student, creator, entrepreneur, retailer, homemaker, or
+                                            social media user, learn how to use AI to simplify daily work and
+                                            achieve
+                                            more in less time.</p>
+                                        <div class="actions d-flex flex-wrap">
+                                            <a href="#cta" class="primary-btn">Reserve Your Seat</a>
+                                            <a href="#cta" class="sec-btn">Explore the Program</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="{{ asset('frontend/images/slide-img.png')}}" alt="" class="w-100 main-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <img src="{{ asset('frontend/images/flow 1.png')}}" alt="" class="flow position-absolute">
+                        <img src="{{ asset('frontend/images/Ellipse 1.png')}}" alt="" class="position-absolute round-bg">
                     </div>
                 </div>
             </div>
+
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -115,47 +153,50 @@
         </div>
     </section>
 
-    <!-- WHY -->
-    <section class="why" id="why">
-        <div class="container">
-            <span class="eyebrow">Why the AI Lab</span>
-            <h2>Why Businesses Choose the AI Lab</h2>
-            <div class="row g-4 justify-content-center mt-5">
+     <!-- OUTCOMES -->
+    <section class="outcomes">
+        <div class="container text-center">
+            <span class="eyebrow">Business Impact</span>
+            <h2>Business Outcomes You Can Expect</h2>
+            <p class="sub">Measured results from organizations that have completed AI Lab training.</p>
+            <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/w1.png')}}" alt=""></span>
-                        <h3>Operational Efficiency</h3>
-                        <p>Teams learn how to automate repetitive tasks, reduce manual workload, and streamline
-                            processes across departments.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/bi1.png')}}" alt=""></span>
+                        <h3 class="stat">40<span>%</span></h3>
+                        <h4>Faster Processes</h4>
+                        <p>Teams report cutting routine task time after applying automation workflows.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/w2.png')}}" alt=""></span>
-                        <h3>Real Business Applications</h3>
-                        <p>Training is built around real-world use cases in operations, HR, finance, customer service,
-                            marketing, and more.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/bi2.png')}}" alt=""></span>
+                        <h3 class="stat">3<span>x</span></h3>
+                        <h4>Productivity Gains</h4>
+                        <p>Teams multiply their output using practical AI tools and techniques.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/w3.png')}}" alt=""></span>
-                        <h3>Expert-Led Instruction</h3>
-                        <p>Industry professionals guide your team through practical exercises, best practices, and
-                            implementation strategies.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/bi3.png')}}" alt=""></span>
+                        <h3 class="stat">85<span>%</span></h3>
+                        <h4>Employee Adoption</h4>
+                        <p>Most participants keep using their new AI skills long after training.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/w4.png')}}" alt=""></span>
-                        <h3>Immediate ROI</h3>
-                        <p>Participants leave with ready-to-use workflows and prototypes that can be deployed inside
-                            your organization.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/bi4.png')}}" alt=""></span>
+                        <h3 class="stat">6<span>wks</span></h3>
+                        <h4>Time to Value</h4>
+                        <p>Average speed to a working prototype, from first session to deployment.</p>
                     </article>
                 </div>
             </div>
         </div>
     </section>
+
+    
 
     <!-- CURRICULUM -->
     <section class="curriculum" id="curriculum">
@@ -375,7 +416,7 @@
                             Enroll Your Team
                         </a>
                 <a href="javascript:void(0)"
-                class="sec-dark"
+                class="btn-dark"
                 data-bs-toggle="modal"
                 data-bs-target="#requestDemoModal">
                 Request a Demo
@@ -384,48 +425,48 @@
         </div>
     </section>
 
-    <!-- OUTCOMES -->
-    <section class="outcomes">
-        <div class="container text-center">
-            <span class="eyebrow">Business Impact</span>
-            <h2>Business Outcomes You Can Expect</h2>
-            <p class="sub">Measured results from organizations that have completed AI Lab training.</p>
-            <div class="row g-4">
+    <!-- WHY -->
+    <section class="why" id="why">
+        <div class="container">
+            <span class="eyebrow">Why the AI Lab</span>
+            <h2>Why Businesses Choose the AI Lab</h2>
+            <div class="row g-4 justify-content-center mt-5">
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/bi1.png')}}" alt=""></span>
-                        <h3 class="stat">40<span>%</span></h3>
-                        <h4>Faster Processes</h4>
-                        <p>Teams report cutting routine task time after applying automation workflows.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/w1.png')}}" alt=""></span>
+                        <h3>Operational Efficiency</h3>
+                        <p>Teams learn how to automate repetitive tasks, reduce manual workload, and streamline
+                            processes across departments.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/bi2.png')}}" alt=""></span>
-                        <h3 class="stat">3<span>x</span></h3>
-                        <h4>Productivity Gains</h4>
-                        <p>Teams multiply their output using practical AI tools and techniques.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/w2.png')}}" alt=""></span>
+                        <h3>Real Business Applications</h3>
+                        <p>Training is built around real-world use cases in operations, HR, finance, customer service,
+                            marketing, and more.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/bi3.png')}}" alt=""></span>
-                        <h3 class="stat">85<span>%</span></h3>
-                        <h4>Employee Adoption</h4>
-                        <p>Most participants keep using their new AI skills long after training.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/w3.png')}}" alt=""></span>
+                        <h3>Expert-Led Instruction</h3>
+                        <p>Industry professionals guide your team through practical exercises, best practices, and
+                            implementation strategies.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
-                        <span class="icon"><img src="{{ asset('frontend/images/bi4.png')}}" alt=""></span>
-                        <h3 class="stat">6<span>wks</span></h3>
-                        <h4>Time to Value</h4>
-                        <p>Average speed to a working prototype, from first session to deployment.</p>
+                        <span class="icon"><img src="{{ asset('frontend/images/w4.png')}}" alt=""></span>
+                        <h3>Immediate ROI</h3>
+                        <p>Participants leave with ready-to-use workflows and prototypes that can be deployed inside
+                            your organization.</p>
                     </article>
                 </div>
             </div>
         </div>
     </section>
+   
 
     <!-- CTA -->
     <section class="cta" id="cta">
