@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'AI Lab for Business')
+@section('title', 'AI Workflow Lab for Business')
 
 @section('content')
 
@@ -14,10 +14,10 @@
                             <div class="row">
                                 <div class="col-lg-6 order-2 order-lg-1">
                                     <span class="eyebrow">AI-Powered Business Transformation</span>
-                                    <h1>AI Lab for Business Transform Your Operations</h1>
+                                    <h1>AI Workflow Lab for Business Transform Your Operations</h1>
                                     <p>Give your team the skills to automate workflows, streamline processes, and
                                         unlock new levels of efficiency.</p>
-                                    <p>The AI Lab delivers practical, instructor-led training that helps businesses
+                                    <p>The AI Workflow Lab delivers practical, instructor-led training that helps businesses
                                         integrate AI into real operations — not someday, but today.</p>
                                     <div class="actions d-flex flex-wrap">
                                         {{-- <a href="#cta" class="primary-btn">Enroll Your Team</a> --}}
@@ -96,10 +96,10 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <span class="eyebrow">About the AI Lab</span>
-                    <h2>AI Lab: Practical AI Training Built for Business Impact</h2>
+                    <span class="eyebrow">About the AI Workflow Lab</span>
+                    <h2>AI Workflow Lab: Practical AI Training Built for Business Impact</h2>
                     <p class="intro">Where Businesses Learn to Work Smarter</p>
-                    <p>The AI Lab is a dedicated training environment designed for organizations that want to adopt AI
+                    <p>The AI Workflow Lab is a dedicated training environment designed for organizations that want to adopt AI
                         strategically and effectively.</p>
                     <p>Your team learns by doing — building real automations, designing AI-powered workflows, and
                         applying tools directly to your business challenges.</p>
@@ -158,7 +158,7 @@
         <div class="container text-center">
             <span class="eyebrow">Business Impact</span>
             <h2>Business Outcomes You Can Expect</h2>
-            <p class="sub">Measured results from organizations that have completed AI Lab training.</p>
+            <p class="sub">Measured results from organizations that have completed AI Workflow Lab training.</p>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
@@ -347,7 +347,7 @@
     <section class="audience" id="audience">
         <div class="container text-center">
             <span class="eyebrow">Who We Serve</span>
-            <h2>Who the AI Lab Is For</h2>
+            <h2>Who the AI Workflow Lab Is For</h2>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
                     <a href="#" class="card h-100">
@@ -428,8 +428,8 @@
     <!-- WHY -->
     <section class="why" id="why">
         <div class="container">
-            <span class="eyebrow">Why the AI Lab</span>
-            <h2>Why Businesses Choose the AI Lab</h2>
+            <span class="eyebrow">Why the AI Workflow Lab</span>
+            <h2>Why Businesses Choose the AI Workflow Lab</h2>
             <div class="row g-4 justify-content-center mt-5">
                 <div class="col-md-6 col-lg-3">
                     <article class="card h-100">
@@ -475,7 +475,7 @@
             <h2>Build the Future of Your Business</h2>
             <p class="lead">AI is here to stay. The businesses that move now will lead — start by training your
                 team with the skills to use AI with confidence and purpose.</p>
-            <p class="sub">Enroll your team or request a demo and see what the AI Lab can do.</p>
+            <p class="sub">Enroll your team or request a demo and see what the AI Workflow Lab can do.</p>
             <div class="actions d-flex flex-wrap justify-content-center">
                 {{-- <a href="#" class="btn-light">Enroll Your Team</a> --}}
                 <a href="javascript:void(0)"
