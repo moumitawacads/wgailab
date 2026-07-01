@@ -58,7 +58,7 @@
             <a href="#" class="close-icon"><img src="./Assets/Images/close-white.png" alt=""></a>
             <ul class="d-flex flex-column">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">about</a></li>
+                <li><a href="#about">about</a></li>
                 <li><a href="#">Service</a></li>
                 <li><a href="#">Case studies</a></li>
                 <li><a href="#">News </a></li>
@@ -808,10 +808,10 @@
             loop: true,
             speed: 800,
 
-            // autoplay: {
-            //     delay: 4000,
-            //     disableOnInteraction: false,
-            // },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
 
             pagination: {
                 el: ".swiper-pagination",
@@ -826,7 +826,7 @@
             effect: "slide", // Default slide effect
         });
     </script>
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const hamburger = document.getElementById("hamburger");
             const mobileMenu = document.getElementById("mobileMenu");
@@ -852,8 +852,8 @@
             });
             overlay.addEventListener("click", closeMenu);
         });
-    </script>
-     <script>
+    </script> -->
+    <script>
         window.addEventListener("scroll", function () {
             const header = document.querySelector("header");
 
@@ -862,6 +862,38 @@
             } else {
                 header.classList.remove("scrolled");
             }
+        });
+    </script>
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+        const closeBtn = document.querySelector(".close-icon");
+
+        // Open menu
+        hamburger.addEventListener("click", () => {
+            mobileMenu.classList.add("active");
+            overlay.classList.add("active");
+        });
+
+        // Close menu
+        function closeMenu() {
+            mobileMenu.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+
+        closeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            closeMenu();
+        });
+
+        overlay.addEventListener("click", closeMenu);
+
+        // Close when any menu item is clicked
+        document.querySelectorAll("#mobileMenu ul li a").forEach(link => {
+            link.addEventListener("click", () => {
+                closeMenu();
+            });
         });
     </script>
 </body>
