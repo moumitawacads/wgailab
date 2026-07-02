@@ -817,40 +817,41 @@
     </script>
     <script>
         const heroSwiper = new Swiper(".heroSwiper", {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            loop: true,
-            speed: 800,
+    slidesPerView: 1,
+    loop: true,
+    speed: 800,
+    autoplay: {
+        delay: 4000,              // 4 seconds
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,  // Pause on hover (desktop)
+    },
 
-            autoHeight: true,
-            observer: true,
-            observeParents: true,
-            updateOnWindowResize: true,
+    autoHeight: true,
 
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
 
-            effect: "slide",
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 
-            on: {
-                init(swiper) {
-                    swiper.updateAutoHeight(0);
-                },
-                slideChangeTransitionStart(swiper) {
-                    swiper.updateAutoHeight(300);
-                },
-                resize(swiper) {
-                    swiper.updateAutoHeight(0);
-                }
-            }
-        });
+    observer: true,
+    observeParents: true,
+    resizeObserver: true,
+
+    on: {
+        imagesReady(swiper) {
+            swiper.updateAutoHeight();
+        },
+        slideChangeTransitionEnd(swiper) {
+            swiper.updateAutoHeight();
+        }
+    }
+});
     </script>
     <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
