@@ -158,6 +158,20 @@
                         <img src="assets/images/Ellipse 1.png" alt="" class="position-absolute round-bg">
                     </div>
                 </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-slider">
+                        <h2>what people say</h2>
+                        <h3>"The AI Workflow Lab transformed how our entire operations team works. We automated 60% of
+                            manual processes in under 3 months — and the ROI was immediate."</h3>
+                        <h4>Sarah Chen <span>Daycare Owner</span></h4>
+                        <div class="actions d-flex flex-wrap">
+                            <a href="#" class="primary-btn">View our testimonial</a>
+                        </div>
+
+                        <img src="assets/images/ts-img.png" alt="" class="w-100 ts-img">
+                    </div>
+                </div>
             </div>
 
             <div class="swiper-pagination"></div>
@@ -808,10 +822,10 @@
             loop: true,
             speed: 800,
 
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
+            autoHeight: true,
+            observer: true,
+            observeParents: true,
+            updateOnWindowResize: true,
 
             pagination: {
                 el: ".swiper-pagination",
@@ -823,7 +837,19 @@
                 prevEl: ".swiper-button-prev",
             },
 
-            effect: "slide", // Default slide effect
+            effect: "slide",
+
+            on: {
+                init(swiper) {
+                    swiper.updateAutoHeight(0);
+                },
+                slideChangeTransitionStart(swiper) {
+                    swiper.updateAutoHeight(300);
+                },
+                resize(swiper) {
+                    swiper.updateAutoHeight(0);
+                }
+            }
         });
     </script>
     <!-- <script>

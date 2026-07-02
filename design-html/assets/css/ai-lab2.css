@@ -1123,7 +1123,7 @@ footer .footer-top {
    /* height: 800px; */
    overflow: hidden;
    z-index: 0;
-   position: relative
+   position: relative;
 }
 
 footer .footer-top .left-wrap .newsletter-top {
@@ -1427,6 +1427,76 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
    padding: 12px 15px;
 }
 
+.testimonial-slider {
+   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%);
+   position: relative;
+   padding-top: 240px;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.testimonial-slider h2 {
+   color: #BA012D;
+   font-family: Albert Sans;
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 100%;
+   letter-spacing: 0%;
+   text-align: center;
+   text-transform: uppercase;
+   margin: 0;
+}
+
+.testimonial-slider h3 {
+   color: #12121A;
+   font-family: Archivo;
+   font-weight: 600;
+   font-size: 30px;
+   line-height: 44px;
+   letter-spacing: 0%;
+   text-align: center;
+   margin: 0;
+   width: 100%;
+   max-width: 850px;
+   padding-top: 10px;
+   padding-bottom: 17px;
+}
+
+.testimonial-slider h4 {
+   margin: 0;
+   font-family: Albert Sans;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 100%;
+   letter-spacing: 0%;
+   text-align: center;
+   color: #12121A;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.testimonial-slider h4 span {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 13px;
+   line-height: 120%;
+   letter-spacing: 8%;
+   text-align: center;
+   text-transform: uppercase;
+   color: #75757A;
+}
+
+.testimonial-slider a {
+   margin-top: 45px;
+}
+
+.ts-img {
+   position: absolute;
+   bottom: 40px;
+}
 
 /*RESPONSIVE*/
 
@@ -1498,11 +1568,7 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 
    .hero .heroSwiper .orbit-slide {
       padding: 100px 0 !important;
-      height: auto !important;
-   }
 
-   .heroSwiper {
-      height: 1050px !important;
    }
 
    .hero .heroSwiper .blue-banner-wrap .left-cnt p {
@@ -1515,7 +1581,6 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 
    .hero .heroSwiper .blue-banner-wrap {
       padding: 150px 0 !important;
-      height: 1050px !important;
    }
 
    .login-wrapper .right-wrap .main-img {
@@ -1586,6 +1651,26 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 }
 
 @media (max-width:767.98px) {
+
+
+   .hero .heroSwiper .orbit-slide,
+   .hero .heroSwiper .blue-banner-wrap,
+   .testimonial-slider {
+
+     
+      padding: 100px 0 100px;
+   }
+
+   .testimonial-slider {
+      padding-top: 170px;
+   }
+
+   .testimonial-slider h3 {
+      font-size: 20px;
+      line-height: 32px;
+      max-width: 360px;
+   }
+
    .side-menu.active {
       width: 80%;
    }
@@ -1613,12 +1698,8 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 
    .hero .heroSwiper .orbit-slide {
       padding: 100px 0 !important;
-      height: auto !important;
    }
 
-   .heroSwiper {
-      height: 1050px !important;
-   }
 
    .hero .heroSwiper .blue-banner-wrap .left-cnt p {
       font-size: 15px !important;
@@ -1630,7 +1711,6 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 
    .hero .heroSwiper .blue-banner-wrap {
       padding: 150px 0 !important;
-      height: 1050px !important;
    }
 
    .login-wrapper .form-area .bottom-links {
@@ -2143,28 +2223,22 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 
 .heroSwiper {
    width: 100%;
-   height: 800px;
-}
-
-.heroSwiper .swiper-slide {
-   width: 100%;
-   height: 100%;
-}
-
-.hero .heroSwiper .blue-banner-wrap {
-   background: radial-gradient(69.85% 258.82% at 87.33% 54.28%, #D5E5F9 40.38%, #D5E5F9 100%)
-      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-   ;
-   position: relative;
-   padding-top: 140px;
-   height: 800px;
 }
 
 .hero .heroSwiper .orbit-slide {
-   position: relative;
-   padding-top: 140px;
+   padding: 140px 0 90px;
    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%);
-   height: 800px;
+}
+
+.hero .heroSwiper .blue-banner-wrap {
+   padding: 140px 0 90px;
+   background: radial-gradient(69.85% 258.82% at 87.33% 54.28%, #D5E5F9 40.38%, #D5E5F9 100%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+   ;
+}
+
+.testimonial-slider {
+   padding: 140px 20px 120px;
 }
 
 
