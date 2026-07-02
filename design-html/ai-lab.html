@@ -497,6 +497,83 @@
         </div>
     </section>
 
+    <section class="full-testimonial" id="full-testimonial">
+        <h2>Testimonial</h2>
+        <h3>What our clients say</h3>
+
+        <div class="swiper testimonialSwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <img src="assets/images/quote.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed tellus ut ante commodo
+                            mattis et id lacus. Phasellus tincidunt, urna vel hendrerit interdum, purus dolor euismod
+                            purus, vitae maximus arcu tellus at mi. Aenean dignissim commodo velit eget commodo.</p>
+                        <div class="user-detail-area d-flex align-items-start">
+                            <img src="assets/images/user.png" alt="">
+                            <h2>David Elson <span>Project Manager</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <img src="assets/images/quote.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed tellus ut ante commodo
+                            mattis et id lacus. Phasellus tincidunt, urna vel hendrerit interdum, purus dolor euismod
+                            purus, vitae maximus arcu tellus at mi. Aenean dignissim commodo velit eget commodo.</p>
+                        <div class="user-detail-area d-flex align-items-start">
+                            <img src="assets/images/user.png" alt="">
+                            <h2>David Elson <span>Project Manager</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <img src="assets/images/quote.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed tellus ut ante commodo
+                            mattis et id lacus. Phasellus tincidunt, urna vel hendrerit interdum, purus dolor euismod
+                            purus, vitae maximus arcu tellus at mi. Aenean dignissim commodo velit eget commodo.</p>
+                        <div class="user-detail-area d-flex align-items-start">
+                            <img src="assets/images/user.png" alt="">
+                            <h2>David Elson <span>Project Manager</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <img src="assets/images/quote.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed tellus ut ante commodo
+                            mattis et id lacus. Phasellus tincidunt, urna vel hendrerit interdum, purus dolor euismod
+                            purus, vitae maximus arcu tellus at mi. Aenean dignissim commodo velit eget commodo.</p>
+                        <div class="user-detail-area d-flex align-items-start">
+                            <img src="assets/images/user.png" alt="">
+                            <h2>David Elson <span>Project Manager</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <img src="assets/images/quote.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed tellus ut ante commodo
+                            mattis et id lacus. Phasellus tincidunt, urna vel hendrerit interdum, purus dolor euismod
+                            purus, vitae maximus arcu tellus at mi. Aenean dignissim commodo velit eget commodo.</p>
+                        <div class="user-detail-area d-flex align-items-start">
+                            <img src="assets/images/user.png" alt="">
+                            <h2>David Elson <span>Project Manager</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- CTA -->
     <section class="cta" id="cta">
@@ -624,6 +701,41 @@
                     swiper.updateAutoHeight();
                 }
             }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const testimonialSwiper = new Swiper('.testimonialSwiper', {
+                slidesPerView: 1.3,
+                spaceBetween: 30,
+                centeredSlides: false,
+                loop: true,
+                speed: 700,
+                grabCursor: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.6,
+                        spaceBetween: 24,
+                    },
+                    768: {
+                        slidesPerView: 2.1,
+                        spaceBetween: 30,
+                    },
+                    992: {
+                        slidesPerView: 2.3,
+                        spaceBetween: 30,
+                    },
+                    1200: {
+                        slidesPerView: 3.8,
+                        spaceBetween: 30,
+                    },
+                },
+            });
         });
     </script>
 </body>
