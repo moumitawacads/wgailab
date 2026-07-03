@@ -85,6 +85,19 @@
                         <img src="{{ asset('frontend/images/Ellipse 1.png')}}" alt="" class="position-absolute round-bg">
                     </div>
                 </div>
+                <div class="swiper-slide">
+                    <div class="testimonial-slider">
+                        <h2>what people say</h2>
+                        <h3>"The AI Workflow Lab transformed how our entire operations team works. We automated 60% of
+                            manual processes in under 3 months — and the ROI was immediate."</h3>
+                        <h4>Sarah Chen <span>Daycare Owner</span></h4>
+                        <div class="actions d-flex flex-wrap">
+                            <a href="#full-testimonial" class="primary-btn">View our testimonial</a>
+                        </div>
+
+                        <img src="{{ asset('frontend/images/ts-img.png')}}" alt="" class="w-100 ts-img">
+                    </div>
+                </div>
             </div>
 
             <div class="swiper-pagination"></div>
