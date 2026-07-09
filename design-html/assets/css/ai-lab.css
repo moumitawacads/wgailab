@@ -2022,3 +2022,7 @@ a {
    text-align: center;
    color: #1E1E21;
 }
+
+.heroSwiper .swiper-wrapper {
+   height: auto !important;
+}
