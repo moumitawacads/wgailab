@@ -1655,6 +1655,10 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 
 @media (max-width:767.98px) {
 
+   .testimonialSwiper{
+      margin: 0 10px;
+   }
+
    .eyebrow{
       margin-top: 20px;
    }
