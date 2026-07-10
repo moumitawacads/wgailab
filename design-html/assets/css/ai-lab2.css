@@ -2340,6 +2340,7 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
    background: #FFFFFF;
    border-radius: 15px;
    padding: 30px;
+   height: 100%;
 }
 
 .testimonial-card p {
