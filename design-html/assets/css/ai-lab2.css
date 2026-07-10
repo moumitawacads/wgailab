@@ -2407,6 +2407,7 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 .testimonialSwiper {
    padding: 20px 0 60px;
    height: fit-content;
+   padding-bottom: 0;
 }
 
 .full-testimonial .swiper-slide {
