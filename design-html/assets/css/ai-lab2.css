@@ -1664,6 +1664,10 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 }
 
 @media (max-width:767.98px) {
+   .logo img {
+        width: 60px;
+        height: 60px;
+    }
 
    .hero .heroSwiper .blue-banner-wrap .round-bg {
     bottom: 80px;
