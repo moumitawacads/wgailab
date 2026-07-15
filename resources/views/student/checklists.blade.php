@@ -35,48 +35,49 @@
                                         <th width="50">Action</th>
                                         <th>Status</th>
                                         <th>Task</th>
-                                        <th>Description</th>
+                                        <th>Assigned At</th>
+                                        <th>Completed At</th>
                                         <th width="120">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($checklists as $checklist)
+                                    @foreach($checklists as $task)
                                         @php
-                                            $userChecklist = \Illuminate\Support\Facades\DB::table('checklist_user')
-                                                ->where('checklist_id', $checklist->id)
-                                                ->where('user_id', auth()->id())
-                                                ->first();
-                                            $isCompleted = $userChecklist && $userChecklist->is_completed;
-                                            $completedAt = $userChecklist ? $userChecklist->completed_at : null;
+                                            $isCompleted = $task['is_completed'];
+                                            $completedAt = $task['completed_at'];
                                         @endphp
                                         <tr class="checklist-row {{ $isCompleted ? 'completed-row' : 'pending-row' }}" 
                                             data-status="{{ $isCompleted ? 'completed' : 'pending' }}">
                                             <td>
                                                 <div class="form-check p-0">
                                                     <input type="checkbox" 
-                                                           class="action-check checklist-checkbox" 
-                                                           data-id="{{ $checklist->id }}"
-                                                           data-url="{{ route('checklist.complete', $checklist) }}"
-                                                           data-incomplete-url="{{ route('checklist.incomplete', $checklist) }}"
-                                                           {{ $isCompleted ? 'checked' : '' }} {{ $isCompleted ? 'disabled' : '' }}>
+                                                            class="action-check checklist-checkbox" 
+                                                            data-id="{{ $task['id'] }}"
+                                                            data-url="{{ $task['complete_url'] }}"
+                                                            data-incomplete-url="{{ $task['incomplete_url'] }}"
+                                                            {{ $isCompleted ? 'checked' : '' }} {{ $isCompleted ? 'disabled' : '' }}>
+                                                   
                                                 </div>
                                             </td>
-                                            <td><span class="badge {{ $isCompleted ? 'bg-success' : 'bg-warning' }}">{{ $isCompleted ? 'Completed' : 'Pending' }}</span></td>
                                             <td>
-                                                <strong>{{ $checklist->title }}</strong>
-                                                @if($completedAt)
-                                                    <br>
-                                                    <small class="text-success">
-                                                        Completed At: {{ \Carbon\Carbon::parse($completedAt)->format('M d, Y h:i A') }}
-                                                    </small>
-                                                @endif
+                                                <span class="badge {{ $isCompleted ? 'bg-success' : 'bg-warning' }}">
+                                                    {{ $isCompleted ? 'Completed' : 'Pending' }}
+                                                </span>
                                             </td>
                                             <td>
-                                                {{ $checklist->description ?? 'No description provided' }}
+                                                <strong>{{ $task['title'] }}</strong>
+                                                <br>
+                                                <small>{{ \Str::limit($task['description'], 50) }}</small>
                                             </td>
                                             <td>
-                                                @if($checklist->link)
-                                                    <a href="{{ $checklist->link }}" target="_blank" class="dom-primary-btn">
+                                                {{ \Carbon\Carbon::parse($task['date'])->format('M d, Y h:i A') }}
+                                            </td>
+                                            <td>
+                                                {{ $completedAt ? \Carbon\Carbon::parse($completedAt)->format('M d, Y h:i A') : '' }}
+                                            </td>
+                                            <td>
+                                                @if($task['link'] && $task['link'] !== '#')
+                                                    <a href="{{ $task['link'] }}" target="_blank" class="dom-primary-btn">
                                                         <i class="align-middle me-1" data-feather="external-link"></i> View
                                                     </a>
                                                 @endif

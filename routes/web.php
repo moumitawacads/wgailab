@@ -151,6 +151,8 @@ Route::middleware(['auth', 'role:se'])->prefix('se')->group(function () {
     Route::post('/checklist/{checklist}/complete', [ChecklistController::class, 'complete'])->name('checklist.complete');
     Route::post('/checklist/{checklist}/incomplete', [ChecklistController::class, 'incomplete'])->name('checklist.incomplete');
     Route::get('/my-checklists', [ChecklistController::class, 'index'])->name('se.checklists');
+
+    Route::post('/assigned/homework/{assigned_domework_id}/complete', [ChecklistController::class, 'assignedDomeworkComplete'])->name('assign.domework.complete');
 });
 
 // Instructor

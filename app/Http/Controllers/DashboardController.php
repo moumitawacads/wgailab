@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AssignedDomework;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -376,29 +377,81 @@ class DashboardController extends Controller
         }
 
         $user = auth()->user();
-        $checklists = Checklist::where('is_active', true)
+        // $checklists = Checklist::where('is_active', true)
+        //     ->where(function ($q) use ($user) {
+        //         $q->where('target_type', 'all')
+        //             ->orWhereHas('users', function ($subq) use ($user) {
+        //                 $subq->where('user_id', $user->id);
+        //             });
+        //     })
+        //     ->orderBy('order', 'asc')
+        //     ->orderBy('created_at', 'asc')
+        //     ->get()
+        //     ->filter(function ($checklist) use ($user) {
+        //         // Check if the checklist is completed by this user
+        //         $isCompleted = DB::table('checklist_user')
+        //             ->where('checklist_id', $checklist->id)
+        //             ->where('user_id', $user->id)
+        //             ->value('is_completed') ?? false;
+
+        //         // Only keep checklists that are NOT completed
+        //         return !$isCompleted;
+        //     })
+        //     ->take(5); // Limit to 5 incomplete items
+
+        // Fetch uncompleted checklists
+        $checklistsRaw = Checklist::where('is_active', true)
             ->where(function ($q) use ($user) {
                 $q->where('target_type', 'all')
                     ->orWhereHas('users', function ($subq) use ($user) {
                         $subq->where('user_id', $user->id);
                     });
             })
-            ->orderBy('order', 'asc')
-            ->orderBy('created_at', 'asc')
             ->get()
             ->filter(function ($checklist) use ($user) {
-                // Check if the checklist is completed by this user
                 $isCompleted = DB::table('checklist_user')
                     ->where('checklist_id', $checklist->id)
                     ->where('user_id', $user->id)
                     ->value('is_completed') ?? false;
-
-                // Only keep checklists that are NOT completed
                 return !$isCompleted;
-            })
-            ->take(5); // Limit to 5 incomplete items
+            });
 
-        return view('student.dashboard', compact('cards', 'labels', 'data', 'stipenddata', 'stipendlabels', 'startOfWeek', 'checklists', 'startOfWeek', 'endOfWeek', 'startOfNextWeek', 'endOfNextWeek'));
+        // Convert checklists to structural generic format
+        $mappedChecklists = $checklistsRaw->map(function ($item) {
+            return [
+                'id'          => $item->id,
+                'type'        => 'checklist',
+                'title'       => $item->title,
+                'description' => $item->description,
+                'link'        => $item->link,
+                'date'        => $item->created_at, // Sort baseline
+                'complete_url' => route('checklist.complete', $item->id),
+                'incomplete_url' => route('checklist.incomplete', $item->id),
+            ];
+        });
+
+        // Fetch Domeworks linked to student classes (assuming through session/mappings or showing all global active homeworks)
+        $domeworksRaw = AssignedDomework::where('user_id', $user->id)->where('status', "0")->orderBy('created_at', 'desc')->get();
+
+        $mappedDomeworks = $domeworksRaw->map(function ($item) {
+            return [
+                'id'          => $item->session->id,
+                'type'        => 'domework',
+                'title'       => $item->session->session_name,
+                'description' => $item->session->session_objectives,
+                'link'        => route('se.session.start', $item->session->id), // Fallback link
+                'date'        => $item->created_at, // Sort baseline
+                'complete_url' => route('assign.domework.complete', $item->id),
+                'incomplete_url' => '#'
+            ];
+        });
+
+        // Merge, sort chronologically by date descending (latest/closest items first), and limit to top 5
+        $mergedFeed = $mappedChecklists->concat($mappedDomeworks)
+            ->sortByDesc('date')
+            ->take(5);
+
+        return view('student.dashboard', compact('cards', 'labels', 'data', 'stipenddata', 'stipendlabels', 'startOfWeek', 'mergedFeed', 'startOfWeek', 'endOfWeek', 'startOfNextWeek', 'endOfNextWeek'));
     }
 
     public function loadinstructorDashboard()

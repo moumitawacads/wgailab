@@ -56,40 +56,30 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				@if(count($checklists) > 0)
+				@if(count($mergedFeed) > 0)
 					<div class="right-area h-100">
 						<h2>Things You May Have Missed</h2>
 						<div class="check-label-wrap" id="participant-checklist">						
-							@foreach($checklists as $checklist)
-								@php
-									$userChecklist = \Illuminate\Support\Facades\DB::table('checklist_user')
-										->where('checklist_id', $checklist->id)
-										->where('user_id', auth()->user()->id)
-										->first();
-									$isCompleted = $userChecklist && $userChecklist->is_completed;
-								@endphp
-								<div class="checklist-item" data-id="{{ $checklist->id }}" style="opacity: {{$isCompleted ? '0.5' : '1'}}">
-									@if($checklist->link)
-										<div class="check-label">
+							@foreach($mergedFeed as $task)
+								<div class="checklist-item" data-id="{{ $task['id'] }}" data-type="{{ $task['type'] }}">
+									<div class="check-label d-flex align-items-center justify-content-between">
+										<div class="d-flex align-items-center">
 											<input type="checkbox" 
-												class="checklist-checkbox" 
-												data-id="{{ $checklist->id }}"
-												data-url="{{ route('checklist.complete', $checklist) }}"
-												data-incomplete-url="{{ route('checklist.incomplete', $checklist) }}"
-												{{ $isCompleted ? 'checked' : '' }}>
-
-											<a href="{{ $checklist->link }}" target="_blank">
-												<label>{{ $checklist->title }}</label>
+												class="checklist-checkbox me-2" 
+												data-id="{{ $task['id'] }}"
+												data-url="{{ $task['complete_url'] }}"
+												data-incomplete-url="{{ $task['incomplete_url'] }}">
+											<a href="{{ $task['link'] }}" target="_blank" class="text-decoration-none text-dark">
+												<label class="mb-0 style="cursor:pointer;"><strong>{{ $task['title'] }}</strong></label>
 											</a>
 										</div>
-									@endif
+									</div>
 								</div>
-							
 							@endforeach
 						</div>
 					
-						<div class="action-area d-flex justify-content-end">
-							<a href="#" onclick="location.href='{{ route('se.checklists') }}'">Show All</a>
+						<div class="action-area d-flex justify-content-end mt-2">
+							<a href="{{ route('se.checklists') }}" class="btn btn-sm btn-link">Show All Tasks</a>
 						</div>
 					</div>
 				@endif
