@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 
-<h1 class="h3 mb-3"><strong>Domework</strong> Answersheets</h1>
+<h1 class="h3 mb-3"><strong>Homework</strong> Answersheets</h1>
 
 <div class="card-body">
 
@@ -86,7 +86,7 @@
                     <th>#</th>
                     <th>Student</th>
                     <th>Session</th>
-                    <th>Domework</th>
+                    <th>Homework</th>
                     <th>Assigned Date</th>
                     <th>Updated Date</th>
                     <th>Status</th>

@@ -124,7 +124,7 @@ class DomeworkController extends Controller
         ]);
 
         return redirect()->route('admin.domework')
-            ->with('success', 'Domework updated successfully!');
+            ->with('success', 'Homework updated successfully!');
     }
 
     /**
@@ -133,7 +133,7 @@ class DomeworkController extends Controller
     public function destroy(Domework $domework)
     {
         $domework->delete();
-        return redirect()->back()->with('success', 'Domework deleted successfully!');
+        return redirect()->back()->with('success', 'Homework deleted successfully!');
     }
 
     public function saveWorksheet(Request $request)

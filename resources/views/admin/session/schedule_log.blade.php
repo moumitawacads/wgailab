@@ -106,7 +106,7 @@
                                 <th>Class</th>
                                 <!-- <th>Participant</th>
                                 <th>Instructor</th> -->
-                                <th>Domework Status</th>
+                                <th>Homework Status</th>
                                 <th>Date</th>
                                 <th>Time</th>
                                 <th>Created By</th>
@@ -152,7 +152,7 @@
                                     <td class="d-md-table-cell">
                                         <div class="action-wrapper">
                                             @if(count($session->sessionLinks) > 0)
-                                                <a href="{{route('admin.view.domework', $session->id)}}" title="Preview Domework">
+                                                <a href="{{route('admin.view.domework', $session->id)}}" title="Preview Homework">
                                                     <button class="bg-black btn-sm">D</button>
                                                 </a>
                                             @endif
@@ -185,7 +185,7 @@
                                             </form>
                                             @endif
 
-                                            <a title="Assign Domework" href="{{ route($role.'.session.managedomework', $session->id) }}"><button class="bg-black btn-sm "><i class="align-middle me-1" data-feather="book-open"></i> <span class="align-middle"></span></button></a>
+                                            <a title="Assign Homework" href="{{ route($role.'.session.managedomework', $session->id) }}"><button class="bg-black btn-sm "><i class="align-middle me-1" data-feather="book-open"></i> <span class="align-middle"></span></button></a>
                                         </div>
                                     </td>    
 

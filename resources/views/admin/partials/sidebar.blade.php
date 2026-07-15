@@ -109,7 +109,7 @@
 											data-feather="book-open"></i>
 
 											<span class="align-middle">
-												Domework
+												Homework
 											</span>
 
 										</a>
@@ -206,7 +206,7 @@
 
 						<li class="sidebar-item {{ request()->routeIs(['admin.dome_answer_sheet']) ? 'active' : '' }}">
 							<a class="sidebar-link" href="{{route('admin.dome_answer_sheet')}}">
-								<i class="align-middle" data-feather="bar-chart"></i> <span class="align-middle">Participants' Domework</span>
+								<i class="align-middle" data-feather="bar-chart"></i> <span class="align-middle">Participants' Homework</span>
 							</a>
 						</li>
 
@@ -239,7 +239,7 @@
 
 					<li class="sidebar-item {{ request()->routeIs('se.assigned_domework') ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{route('se.assigned_domework')}}">
-						<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Assigned DomeWork</span>
+						<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Assigned HomeWork</span>
 						</a>
 					</li>
 
@@ -282,7 +282,7 @@
 
 					<li class="sidebar-item {{ request()->routeIs(['instructor.domeworks', 'instructor.view.domework']) ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{route('instructor.domeworks')}}">
-						<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Domeworks</span>
+						<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Homeworks</span>
 						</a>
 					</li>
 

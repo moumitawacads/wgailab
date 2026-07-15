@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 
-    <h1 class="h3 mb-3"><strong>Domework</strong> List</h1>
+    <h1 class="h3 mb-3"><strong>Homework</strong> List</h1>
 
     @if(session('success'))
         <div class="alert alert-success" id="success-alert" style="background-color: #d1fae5; color: #065f46; padding: 1rem; border: 1px solid #10b981; border-radius: 0.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="mb-3">
-            <a href="{{route('admin.domework.create')}}"><button class="dom-primary-btn float-end"><i class="align-middle me-2" data-feather="plus"></i>Add Domework</button></a>
+            <a href="{{route('admin.domework.create')}}"><button class="dom-primary-btn float-end"><i class="align-middle me-2" data-feather="plus"></i>Add Homework</button></a>
         </div>
 
         <div class="mb-3 mt-3">
@@ -49,7 +49,7 @@
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>
-                            <th>Domework Video</th>
+                            <th>Homework Video</th>
                             <th>Name</th>
                             <th>Description</th>
                             <th class=" d-xl-table-cell" style="width: 110px;">Created On</th>

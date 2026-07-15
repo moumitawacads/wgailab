@@ -12,7 +12,8 @@ use App\Models\Checklist;
 use App\Models\Session;
 use App\Models\WeeklyStipendReport;
 use App\Models\User;
-
+use App\Services\AttendanceReportService;
+use App\Services\DomeworkReportService;
 
 class DashboardController extends Controller
 {
@@ -147,7 +148,111 @@ class DashboardController extends Controller
             $stipenddata = [0];
         }
 
-        return view('admin.dashboard', compact('cards', 'labels', 'data', 'stipenddata', 'stipendlabels', 'startOfWeek', 'endOfWeek', 'startOfNextWeek', 'endOfNextWeek'));
+
+        // attendance report
+        $service = new AttendanceReportService();
+        if (isset($request) && $request->has('period')) {
+            $period = $request->get('period', 'this_week');
+            $startDate = $request->get('start_date');
+            $endDate = $request->get('end_date');
+            $dateRange = $service->getDateRange($period, $startDate, $endDate);
+        } else {
+            $dateRange = $service->getDateRange('this_week');
+        }
+
+        $stats = $service->getAttendanceStats($dateRange['start'], $dateRange['end']);
+
+
+        $attendanceBoxes = [
+            [
+                'title' => '80%+ Attendance',
+                'count' => count($stats['above_80']),
+                'icon' => 'award',
+                'color' => 'success',
+                'category' => 'above_80',
+                'users' => $stats['above_80']
+            ],
+            [
+                'title' => '70-80% Attendance',
+                'count' => count($stats['between_70_80']),
+                'icon' => 'check-circle',
+                'color' => 'info',
+                'category' => 'between_70_80',
+                'users' => $stats['between_70_80']
+            ],
+            [
+                'title' => '60-70% Attendance',
+                'count' => count($stats['between_60_70']),
+                'icon' => 'alert-circle',
+                'color' => 'warning',
+                'category' => 'between_60_70',
+                'users' => $stats['between_60_70']
+            ],
+            [
+                'title' => 'Below 60% Attendance',
+                'count' => count($stats['below_60']),
+                'icon' => 'x-circle',
+                'color' => 'danger',
+                'category' => 'below_60',
+                'users' => $stats['below_60']
+            ],
+        ];
+
+        // domework report
+        $domeworkService = new DomeworkReportService();
+        $domeworkDateRange = $domeworkService->getDateRange('this_week');
+        $domeworkStats = $domeworkService->getDomeworkStats($domeworkDateRange['start'], $domeworkDateRange['end']);
+
+        $domeworkBoxes = [
+            [
+                'title' => '75%+ Homework Completion',
+                'count' => count($domeworkStats['above_75']),
+                'icon' => 'award',
+                'color' => 'success',
+                'category' => 'above_75',
+                'users' => $domeworkStats['above_75']
+            ],
+            [
+                'title' => '50%+ Homework Completion',
+                'count' => count($domeworkStats['above_50']),
+                'icon' => 'check-circle',
+                'color' => 'info',
+                'category' => 'above_50',
+                'users' => $domeworkStats['above_50']
+            ],
+            [
+                'title' => '25%+ Homework Completion',
+                'count' => count($domeworkStats['above_25']),
+                'icon' => 'alert-circle',
+                'color' => 'warning',
+                'category' => 'above_25',
+                'users' => $domeworkStats['above_25']
+            ],
+            [
+                'title' => 'Below 25% Homework Completion',
+                'count' => count($domeworkStats['below_25']),
+                'icon' => 'x-circle',
+                'color' => 'danger',
+                'category' => 'below_25',
+                'users' => $domeworkStats['below_25']
+            ],
+        ];
+
+        return view('admin.dashboard', compact(
+            'cards',
+            'labels',
+            'data',
+            'stipenddata',
+            'stipendlabels',
+            'startOfWeek',
+            'endOfWeek',
+            'startOfNextWeek',
+            'endOfNextWeek',
+            'attendanceBoxes',
+            'dateRange',
+            'domeworkBoxes',
+            'domeworkDateRange'
+        ));
     }
 
 
@@ -336,5 +441,234 @@ class DashboardController extends Controller
             ],
         ];
         return view('instructor.instructordashboard', compact('cards', 'startOfWeek', 'endOfWeek', 'startOfNextWeek', 'endOfNextWeek'));
+    }
+
+    public function getAttendanceStats(Request $request)
+    {
+        $service = new AttendanceReportService();
+
+        $period = $request->get('period', 'this_week');
+        $startDate = $request->get('start_date');
+        $endDate = $request->get('end_date');
+
+        // For custom period, we need to pass the dates directly
+        if ($period === 'custom' && $startDate && $endDate) {
+            $dateRange = $service->getDateRange('custom', $startDate, $endDate);
+        } else {
+            $dateRange = $service->getDateRange($period);
+        }
+
+        $stats = $service->getAttendanceStats($dateRange['start'], $dateRange['end']);
+
+        $attendanceBoxes = [
+            [
+                'title' => '80%+ Attendance',
+                'count' => count($stats['above_80']),
+                'icon' => 'award',
+                'color' => 'success',
+                'category' => 'above_80',
+                'users' => $stats['above_80']
+            ],
+            [
+                'title' => '70-80% Attendance',
+                'count' => count($stats['between_70_80']),
+                'icon' => 'check-circle',
+                'color' => 'info',
+                'category' => 'between_70_80',
+                'users' => $stats['between_70_80']
+            ],
+            [
+                'title' => '60-70% Attendance',
+                'count' => count($stats['between_60_70']),
+                'icon' => 'alert-circle',
+                'color' => 'warning',
+                'category' => 'between_60_70',
+                'users' => $stats['between_60_70']
+            ],
+            [
+                'title' => 'Below 60% Attendance',
+                'count' => count($stats['below_60']),
+                'icon' => 'x-circle',
+                'color' => 'danger',
+                'category' => 'below_60',
+                'users' => $stats['below_60']
+            ],
+        ];
+
+        // Pass the period parameter to the response
+        return response()->json([
+            'boxes' => $attendanceBoxes,
+            'date_range' => $dateRange,
+            'period' => $period
+        ]);
+    }
+
+    public function getDomeworkStats(Request $request)
+    {
+        $service = new DomeworkReportService();
+
+        $period = $request->get('period', 'this_week');
+        $startDate = $request->get('start_date');
+        $endDate = $request->get('end_date');
+
+        // For custom period, we need to pass the dates directly
+        if ($period === 'custom' && $startDate && $endDate) {
+            $dateRange = $service->getDateRange('custom', $startDate, $endDate);
+        } else {
+            $dateRange = $service->getDateRange($period);
+        }
+
+        $stats = $service->getDomeworkStats($dateRange['start'], $dateRange['end']);
+
+        $domeworkBoxes = [
+            [
+                'title' => '75%+ Homework Completion',
+                'count' => count($stats['above_75']),
+                'icon' => 'award',
+                'color' => 'success',
+                'category' => 'above_75',
+                'users' => $stats['above_75']
+            ],
+            [
+                'title' => '50%+ Homework Completion',
+                'count' => count($stats['above_50']),
+                'icon' => 'check-circle',
+                'color' => 'info',
+                'category' => 'above_50',
+                'users' => $stats['above_50']
+            ],
+            [
+                'title' => '25%+ Homework Completion',
+                'count' => count($stats['above_25']),
+                'icon' => 'alert-circle',
+                'color' => 'warning',
+                'category' => 'above_25',
+                'users' => $stats['above_25']
+            ],
+            [
+                'title' => 'Below 25% Homework Completion',
+                'count' => count($stats['below_25']),
+                'icon' => 'x-circle',
+                'color' => 'danger',
+                'category' => 'below_25',
+                'users' => $stats['below_25']
+            ],
+        ];
+
+        return response()->json([
+            'boxes' => $domeworkBoxes,
+            'date_range' => $dateRange,
+            'period' => $period
+        ]);
+    }
+
+    public function getDomeworkDetails(Request $request)
+    {
+        $service = new DomeworkReportService();
+
+        $category = $request->get('category', 'above_75');
+        $period = $request->get('period', 'this_week');
+        $startDate = $request->get('start_date');
+        $endDate = $request->get('end_date');
+
+        // Get date range
+        if ($period === 'custom' && $startDate && $endDate) {
+            $dateRange = $service->getDateRange('custom', $startDate, $endDate);
+        } else {
+            $dateRange = $service->getDateRange($period);
+        }
+
+        // Get all users and their completion rates
+        $allUsers = User::where('role', 'se')->get();
+        $usersWithRates = [];
+
+        foreach ($allUsers as $user) {
+            $details = $service->getUserDomeworkDetails($user->id, $dateRange['start'], $dateRange['end']);
+
+            if ($details['total_assigned'] > 0) {
+                $user->completion_rate = $details['completion_rate'];
+                $user->total_assigned = $details['total_assigned'];
+                $user->completed = $details['completed'];
+                $user->pending = $details['pending'];
+                $usersWithRates[] = $user;
+            }
+        }
+
+        // Filter users based on category
+        $filteredUsers = array_filter($usersWithRates, function ($user) use ($category) {
+            switch ($category) {
+                case 'above_75':
+                    return $user->completion_rate >= 75;
+                case 'above_50':
+                    return $user->completion_rate >= 50 && $user->completion_rate < 75;
+                case 'above_25':
+                    return $user->completion_rate >= 25 && $user->completion_rate < 50;
+                case 'below_25':
+                    return $user->completion_rate < 25;
+                default:
+                    return false;
+            }
+        });
+
+        // Convert to array format for the view
+        $userData = [];
+        foreach ($filteredUsers as $user) {
+            $userData[] = [
+                'user_id' => $user->id,
+                'user_name' => $user->name,
+                'user_email' => $user->email,
+                'user_phone' => $user->phone,
+                'user_city' => $user->city,
+                'total_assigned' => $user->total_assigned,
+                'completed' => $user->completed,
+                'pending' => $user->pending,
+                'completion_rate' => $user->completion_rate,
+            ];
+        }
+
+        // Sort by completion rate descending
+        usort($userData, function ($a, $b) {
+            return $b['completion_rate'] <=> $a['completion_rate'];
+        });
+
+        return view('admin.reports.domework_details', [
+            'users' => $userData,
+            'category' => $category,
+            'dateRange' => $dateRange,
+            'period' => $period
+        ]);
+    }
+
+    public function showUserDomeworkDetails(Request $request)
+    {
+        $userId = $request->get('user_id');
+        $period = $request->get('period', 'this_week');
+        $startDate = $request->get('start_date');
+        $endDate = $request->get('end_date');
+
+        $service = new DomeworkReportService();
+
+        // Get date range
+        if ($period === 'custom' && $startDate && $endDate) {
+            $dateRange = $service->getDateRange('custom', $startDate, $endDate);
+        } else {
+            $dateRange = $service->getDateRange($period);
+        }
+
+        // Get user details
+        $user = User::find($userId);
+        if (!$user) {
+            return redirect()->back()->with('error', 'User not found.');
+        }
+
+        // Get user domework details
+        $details = $service->getUserDomeworkDetails($userId, $dateRange['start'], $dateRange['end']);
+
+        return view('admin.reports.user_domework_details', [
+            'user' => $user,
+            'details' => $details,
+            'dateRange' => $dateRange,
+            'period' => $period
+        ]);
     }
 }

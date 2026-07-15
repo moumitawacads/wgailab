@@ -371,50 +371,50 @@ class ClassController extends Controller
                 ]);
             }
 
-            // Create Zoom meeting and register all users
-            $zoomService = new ZoomMeetingService();
+            // // Create Zoom meeting and register all users
+            // $zoomService = new ZoomMeetingService();
 
-            // Step 1: Create the main meeting
-            $meeting = $zoomService->createMeeting($session);
+            // // Step 1: Create the main meeting
+            // $meeting = $zoomService->createMeeting($session);
 
-            // Update session with Zoom meeting details
-            $session->update([
-                'zoom_meeting_id' => $meeting['id'],
-                'zoom_meeting_password' => $meeting['password'],
-                'zoom_meeting_url' => $meeting['join_url'],
-                'zoom_registration_url' => $meeting['registration_url'],
-                'zoom_start_url' => $meeting['start_url'],
-            ]);
+            // // Update session with Zoom meeting details
+            // $session->update([
+            //     'zoom_meeting_id' => $meeting['id'],
+            //     'zoom_meeting_password' => $meeting['password'],
+            //     'zoom_meeting_url' => $meeting['join_url'],
+            //     'zoom_registration_url' => $meeting['registration_url'],
+            //     'zoom_start_url' => $meeting['start_url'],
+            // ]);
 
-            // Step 2: Register each user and get unique join URLs
-            $failedRegistrations = [];
-            $successCount = 0;
+            // // Step 2: Register each user and get unique join URLs
+            // $failedRegistrations = [];
+            // $successCount = 0;
 
-            foreach ($request->user_id as $userId) {
-                try {
-                    $user = User::find($userId);
-                    $registrant = $zoomService->addRegistrant($meeting['id'], $user);
+            // foreach ($request->user_id as $userId) {
+            //     try {
+            //         $user = User::find($userId);
+            //         $registrant = $zoomService->addRegistrant($meeting['id'], $user);
 
-                    if ($registrant) {
-                        UsersClassesMapping::where('session_id', $session->id)
-                            ->where('user_id', $userId)
-                            ->update([
-                                'zoom_join_url' => $registrant['join_url'],
-                                'registrant_id' => $registrant['id']
-                            ]);
-                        $successCount++;
-                    }
+            //         if ($registrant) {
+            //             UsersClassesMapping::where('session_id', $session->id)
+            //                 ->where('user_id', $userId)
+            //                 ->update([
+            //                     'zoom_join_url' => $registrant['join_url'],
+            //                     'registrant_id' => $registrant['id']
+            //                 ]);
+            //             $successCount++;
+            //         }
 
-                    // Small delay to avoid rate limits (0.5 second between registrations)
-                    usleep(500000);
-                } catch (\Exception $e) {
-                    $failedRegistrations[] = [
-                        'user_id' => $userId,
-                        'error' => $e->getMessage()
-                    ];
-                    Log::error("Failed to register user {$userId}: " . $e->getMessage());
-                }
-            }
+            //         // Small delay to avoid rate limits (0.5 second between registrations)
+            //         usleep(500000);
+            //     } catch (\Exception $e) {
+            //         $failedRegistrations[] = [
+            //             'user_id' => $userId,
+            //             'error' => $e->getMessage()
+            //         ];
+            //         Log::error("Failed to register user {$userId}: " . $e->getMessage());
+            //     }
+            // }
 
             DB::commit();
 
@@ -1220,7 +1220,7 @@ class ClassController extends Controller
 
 
             Notification::create([
-                'title' => 'Domework Assignment',
+                'title' => 'Homework Assignment',
                 'message' => 'Assignments updated.',
                 'user_id' => $userId,
                 'type' => 'info',

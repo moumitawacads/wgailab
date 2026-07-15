@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 
-    <h1 class="h3 mb-3"><strong>{{$title}}</strong> Domework</h1>
+    <h1 class="h3 mb-3"><strong>{{$title}}</strong> Homework</h1>
     @if ($errors->any())
         <div class="alert alert-danger" style="color: red; background: #fee2e2; border: 1px solid #ef4444; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
             <ul style="margin: 0;">
@@ -31,7 +31,7 @@
                         <textarea name="question" class="form-control" placeholder="Enter Question Set" >{{ old('question', $domework->question ?? '') }}</textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="media_url" class="form-label">Domework Video</label>
+                        <label for="media_url" class="form-label">Homework Video</label>
                         <input type="url" name="media_url" class="form-control" placeholder="https://example.com/image.jpg or https://youtube.com/watch?v=..." value="{{ old('media_url', $domework->media_url ?? '') }}">
                         <small class="text-muted">Supported: Images (jpg, png, gif, webp) or Videos (YouTube, Vimeo, direct MP4)</small>
                         

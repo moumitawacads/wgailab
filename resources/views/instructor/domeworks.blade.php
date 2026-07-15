@@ -2,7 +2,7 @@
 @section('content')
 
 
-	<h1 class="h3 mb-3"><strong>Domeworks</strong> List</h1>
+	<h1 class="h3 mb-3"><strong>Homeworks</strong> List</h1>
 
     <div class="mb-3 mt-3">
         <form method="GET" class="row filter-form-wrap">

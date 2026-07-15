@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ChecklistController as AdminChecklistController;
+use App\Http\Controllers\AttendanceReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -119,6 +120,15 @@ Route::middleware(['auth', 'role:admin,superadmin,workforce_development'])->pref
     Route::get('/checklists/{checklist}/edit', [AdminChecklistController::class, 'edit'])->name('admin.checklists.edit');
     Route::put('/checklists/{checklist}', [AdminChecklistController::class, 'update'])->name('admin.checklists.update');
     Route::delete('/checklists/{checklist}', [AdminChecklistController::class, 'destroy'])->name('admin.checklists.destroy');
+
+
+    Route::get('/attendance/stats', [DashboardController::class, 'getAttendanceStats'])->name('admin.attendance.stats');
+    Route::get('/attendance/details', [AttendanceReportController::class, 'details'])->name('admin.attendance.details');
+    Route::get('/attendance/user/{user_id}', [AttendanceReportController::class, 'userDetails'])->name('admin.attendance.user');
+
+    Route::get('/domework-stats', [DashboardController::class, 'getDomeworkStats'])->name('admin.domework.stats');
+    Route::get('/domework-details', [DashboardController::class, 'getDomeworkDetails'])->name('admin.domework.details');
+    Route::get('/user-domework-details', [DashboardController::class, 'showUserDomeworkDetails'])->name('admin.user.domework.details');
 });
 
 // SE

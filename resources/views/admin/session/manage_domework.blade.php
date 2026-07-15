@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 
-    <h1 class="h3 mb-3"><strong>Domework BusinessPlan </strong>Assignment </h1>
+    <h1 class="h3 mb-3"><strong>Homework BusinessPlan </strong>Assignment </h1>
     @if ($errors->any())
         <div class="alert alert-danger" style="color: red; background: #fee2e2; border: 1px solid #ef4444; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
             <ul style="margin: 0;">
@@ -27,7 +27,7 @@
                     @endphp
             
                     <div class="mb-3 col-12 col-lg-12">
-                        <label for="domeworks" class="form-label">Select DomeWorks</label>
+                        <label for="domeworks" class="form-label">Select Homework</label>
                         <select name="domeworks" class="form-control select2">
                             <option value="">Select</option>
                             @foreach($domeworks as $domework)

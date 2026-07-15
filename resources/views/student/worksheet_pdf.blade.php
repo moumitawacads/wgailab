@@ -144,7 +144,7 @@
     <div class="header">
 
         <h1>
-            DOMEWORK BUSINESS PLAN
+            HOMEWORK BUSINESS PLAN
             WORKSHEET
         </h1>
 

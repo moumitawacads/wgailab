@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-8">
-                    <h2>DOMEWORK BUSINESS PLAN WorkSheet</h2>
+                    <h2>HOMEWORK BUSINESS PLAN WorkSheet</h2>
                     <p>{{$session_info->session_name}}</p>
                 </div>
                 <div class="col-lg-4">
@@ -25,7 +25,7 @@
                     <button class="active" id="domework-main-tab" data-bs-toggle="tab"
                         data-bs-target="#domework-main-content" type="button" role="tab"
                         aria-controls="domework-main-content" aria-selected="true">
-                        Domework
+                        Homework
                     </button>
 
                     <button class="" id="business-plan-main-tab" data-bs-toggle="tab"
