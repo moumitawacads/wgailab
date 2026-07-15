@@ -102,6 +102,35 @@
                             <td class="d-xl-table-cell">{{ $item->created_at->format('d M Y, h:i A') }}</td>
                             <td class="d-md-table-cell">
                                 <div class="action-wrapper">
+                                    {{-- @if(auth()->user() && in_array(auth()->user()->role, ['superadmin', 'admin']) && $item->role == 'se')
+                                        @php
+                                            $digitalCard = $item->digitalCard;
+                                            $isPublished = $item->digital_card_enabled;
+                                        @endphp
+                                        
+                                        @if($isPublished)
+                                            <form class="d-inline" action="{{ route('admin.digital_cards.toggle_publish', $item->id) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                <input type="hidden" name="digital_card_enabled" value="0">
+                                                <button type="submit" class="btn btn-sm btn-warning" onclick="return confirm('Unpublish this digital card? User will lose access.')" title="Unpublish">
+                                                    <i class="align-middle me-1" data-feather="shield-off"></i>
+                                                </button>
+                                            </form>
+                                            @if($digitalCard)
+                                                <a href="{{ route('digital-card.show', 'id='.base64_encode($digitalCard->id)) }}" target="_blank" class="btn btn-sm btn-info">
+                                                    <i class="align-middle me-1" data-feather="eye"></i> 
+                                                </a>
+                                            @endif
+                                        @else
+                                            <form class="d-inline" action="{{ route('admin.digital_cards.toggle_publish', $item->id) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                <input type="hidden" name="digital_card_enabled" value="1">
+                                                <button type="submit" class="btn btn-sm btn-success" onclick="return confirm('Publish digital card for this user? They will gain access to create their card.')" title="Publish">
+                                                    <i class="align-middle me-1" data-feather="shield"></i>
+                                                </button>
+                                            </form>
+                                        @endif      
+                                    @endif   --}}
                                     <a href="{{ route('admin.users.edit', $item->id) }}"><button class="bg-black btn-sm"><i class="align-middle me-1" data-feather="edit"></i> <span class="align-middle"></span></button></a>
                             
                                     <form class="d-inline" action="{{ route('admin.users.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">

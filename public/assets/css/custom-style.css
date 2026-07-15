@@ -1,0 +1,238 @@
+.wizard-step {
+    text-align: center;
+    cursor: pointer;
+}
+
+.wizard-step span {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #cfcfcf;
+    color: #fff;
+    margin: auto;
+}
+
+.stat.ar-icon svg{
+    color: #ffffff !important;
+}
+
+.wizard-step.active span {
+    background: #9dca3b;
+    color: #000000;
+    font-weight: 900;
+}
+
+.wizard-step.active small {
+    color: #000000;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.dcard-head {
+    font-family: Mulish;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 16px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #000000 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #9ecb3ca1 !important;
+    border: none !important;
+}
+
+.gap-8{
+    gap: 8px;
+}
+
+.acc-label-in label{
+    font-family: Mulish !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    line-height: 100% !important;
+    letter-spacing: 0% !important;
+}
+
+.accordion-button {
+
+    font-family: Mulish !important;
+    font-weight: 600 !important;
+    font-size: 20px;
+    line-height: 100% !important;
+    letter-spacing: 0% !important;
+    vertical-align: middle !important;
+    color: #000000 !important;
+}
+
+.dcard-head-small {
+    font-family: Mulish;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 16px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #000000 !important;
+}
+
+.social-icon .feather {
+    color: #9dca3b;
+}
+
+.user-name-head{
+    text-align: left !important;
+    width: 20% !important;
+}
+
+.user-detail{
+    display: flex;
+    flex-direction: column;
+    line-height: 10px;
+    text-align: left;
+    width: fit-content;
+}
+
+.table-head-area{
+    background: #9ecb3cc2 !important;
+    padding: 10px !important;
+    margin-bottom: 20px !important;
+    border-radius: 5px !important;
+}
+
+.wizard-step.completed span {
+    background: #9dca3b;
+    color: #000000;
+    font-weight: 900;
+}
+
+.wizard-step.completed small {
+    color: #000000;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.wizard-line {
+    width: 120px;
+    height: 2px;
+    background: #ddd;
+    margin: 0 15px;
+}
+
+.accordion-button {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.social-input {
+    flex: 1;
+}
+
+.social-remove {
+    width: 45px;
+}
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-buttons .btn {
+        border-radius: 40px;
+    padding: 10px 15px;
+    border: 2px solid #9ecb3c;
+    color: #000000;
+    font-weight: 600;
+}
+
+.social-buttons .btn:hover{
+    background: #9ecb3c;
+    border: none;
+    color: #000000;
+}
+
+.social-buttons .btn:disabled {
+    background: #9ecb3cad;
+    border-color: snow;
+    cursor: not-allowed;
+    opacity: 1;
+    border-radius: 40px;
+    padding: 10px 15px;
+    font-weight: 700;
+}
+
+.remove-testimonial{
+    background: #9ecb3c !important;
+    border: none !important;
+    border-radius: 100% !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+}
+
+.social-remove{
+    background: #9ecb3c !important;
+    border: none !important;
+    border-radius: 5px !important;
+    /* display: flex !important;
+    justify-content: center !important;
+    align-items: center !important; */
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #b00000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*preview card*/

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Classes\GenerateStrongPassword;
+use App\Models\DigitalCard;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Nnjeim\World\World;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 
 class UserController extends Controller
@@ -224,5 +228,67 @@ class UserController extends Controller
         ]);
 
         return response()->json($cities->data);
+    }
+
+    public function togglePublish($userId, Request $request)
+    {
+        $user = User::findOrFail($userId);
+
+        $digitalCard = DigitalCard::firstOrNew(['user_id' => $userId]);
+        $user->digital_card_enabled = $request->digital_card_enabled;
+        $user->digital_card_published_at = now();
+        $user->save();
+
+        $fullname = explode(' ', $user->name);
+
+        $contactInformation = [];
+        $contactInformation['email'] = $user->email;
+        $contactInformation['mobile'] = $user->phone;
+        $contactInformation['website'] = $user->social_link;
+
+        $digitalCard->user_id = $user->id;
+        $digitalCard->dcard_id = 'DC-' . strtoupper(Str::random(8));
+        $digitalCard->first_name = $fullname[0];
+        $digitalCard->last_name = count($fullname) > 1 ? $fullname[1] : null;
+        $digitalCard->address = $user->address_line_1;
+        $digitalCard->is_active = true;
+        $digitalCard->contact_informations = $contactInformation;
+        $digitalCard->social_links = [];
+        $digitalCard->promotional_content = [];
+        $digitalCard->testimonials = [];
+        $digitalCard->save();
+
+        $title = '';
+        $dateFormatted = Carbon::now()->format('jS F, Y');
+        $timeFormatted = Carbon::now()->format('g:i A');
+        if ($request->digital_card_enabled) {
+            $message = "Your Digital Card has been published on {$dateFormatted} at {$timeFormatted}. You can now make your own digital card and share it with others.";
+            $title = 'New Digital Card Published';
+        } else {
+            $message = "Your Digital Card has been unpublished by administrator on {$dateFormatted} at {$timeFormatted}.";
+            $title = 'Digital Card Unpublished';
+        }
+
+        Notification::create([
+            'title' => $title,
+            'message' => $message,
+            'user_id' => $userId,
+            'is_read' => 0,
+        ]);
+
+        $status = $request->digital_card_enabled ? 'published' : 'unpublished';
+        return redirect()->back()->with('success', "Digital Card has been {$status} for {$user->name}");
+    }
+
+    /**
+     * Admin: Toggle card active status
+     */
+    public function toggleStatus($id)
+    {
+        $digitalCard = DigitalCard::findOrFail($id);
+        $digitalCard->is_active = !$digitalCard->is_active;
+        $digitalCard->save();
+
+        return redirect()->back()->with('success', 'Digital Card status updated successfully');
     }
 }

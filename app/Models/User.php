@@ -94,4 +94,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(WeeklyStipendReport::class, 'user_id');
     }
+
+    public function digitalCard()
+    {
+        return $this->hasOne(DigitalCard::class);
+    }
+
+    // Check if user can access digital card feature
+    public function canAccessDigitalCard()
+    {
+        $card = $this->digitalCard;
+        return $card && $this->digital_card_enabled && $card->is_active;
+    }
 }

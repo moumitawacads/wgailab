@@ -260,6 +260,14 @@
 						</a>
 					</li>
 
+					@if(auth()->user() && auth()->user()->digital_card_enabled)
+						<li class="sidebar-item {{ request()->routeIs('se.edit_dcard*') ? 'active' : '' }}">
+							<a class="sidebar-link" href="{{route('se.edit_dcard')}}">
+								<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">My Digital Card</span>
+							</a>
+						</li>
+					@endif
+
 					<li class="sidebar-item {{ request()->routeIs(['se.notifications']) ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{route('se.notifications')}}">
               				<i class="align-middle" data-feather="bell"></i> <span class="align-middle">Notifications</span>

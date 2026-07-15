@@ -26,6 +26,8 @@ use App\Http\Controllers\DomeworkController;
 use App\Http\Controllers\BusinessPlanController;
 use App\Http\Controllers\ResourceLibraryController;
 use App\Http\Controllers\ChecklistController;
+use App\Http\Controllers\DigitalCardController;
+use App\Http\Controllers\GoogleWalletController;
 
 Route::get('/', function () {
     // return redirect('https://wacadsgroup.com/training', 301);
@@ -45,6 +47,9 @@ Route::middleware(['auth', 'role:admin,superadmin,workforce_development'])->pref
     Route::post('/users/update/{id}', [UserController::class, 'update'])->name('admin.users.update');
     Route::get('/users/add', [UserController::class, 'add'])->name('admin.users.add');
     Route::post('/users/create', [UserController::class, 'create'])->name('admin.users.create');
+
+    Route::post('/digital-cards/toggle-publish/{userId}', [UserController::class, 'togglePublish'])->name('admin.digital_cards.toggle_publish');
+    Route::post('/digital-cards/toggle-status/{id}', [UserController::class, 'toggleStatus'])->name('admin.digital_cards.toggle_status');
 
     /** Class Route */
     Route::get('/classes', [ClassController::class, 'list'])->name('admin.classes');
@@ -153,7 +158,25 @@ Route::middleware(['auth', 'role:se'])->prefix('se')->group(function () {
     Route::get('/my-checklists', [ChecklistController::class, 'index'])->name('se.checklists');
 
     Route::post('/assigned/homework/{assigned_domework_id}/complete', [ChecklistController::class, 'assignedDomeworkComplete'])->name('assign.domework.complete');
+
+
+    /** DCard */
+    Route::get('/edit_dcard', [DigitalCardController::class, 'edit'])->name('se.edit_dcard');
+    Route::get('users/{user}/digital-card/edit', [DigitalCardController::class, 'edit'])
+        ->name('se.digital-card.edit');
+    Route::post('users/{user}/digital-card/update', [DigitalCardController::class, 'update'])
+        ->name('se.digital-card.update');
+    Route::get('users/{user}/digital-card/preview', [DigitalCardController::class, 'preview'])
+        ->name('se.digital-card.preview');
 });
+Route::get('users/digital-card/{user}/vcf', [DigitalCardController::class, 'downloadVcf'])->name('se.digital-card.vcf');
+
+Route::get('/digital-card/{user}/google-wallet', [GoogleWalletController::class, 'addToWallet'])
+    ->name('digital-card.google-wallet');
+
+// Get wallet URL as JSON (for AJAX)
+Route::get('/digital-card/{user}/google-wallet-url', [GoogleWalletController::class, 'getWalletUrl'])
+    ->name('digital-card.google-wallet-url');
 
 // Instructor
 Route::middleware(['auth', 'role:instructor'])->prefix('instructor')->group(function () {
@@ -217,3 +240,7 @@ Route::get('/admin/forgot-password', [LoginController::class, 'showForgotForm'])
 Route::post('/admin/forgot-password', [LoginController::class, 'sendResetLink'])->name('password.email');
 Route::get('/admin/reset-password/{token}', [LoginController::class, 'showResetForm'])->name('password.reset');
 Route::post('/admin/reset-password', [LoginController::class, 'resetPassword'])->name('password.update');
+
+Route::get('digital-card', [DigitalCardController::class, 'digitalCardShow'])
+    ->name('digital-card.show');
+Route::get('digital-card/{user}/qrcode', [DigitalCardController::class, 'getQrCode'])->name('digital-card.qrcode');
