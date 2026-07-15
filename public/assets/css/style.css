@@ -1579,8 +1579,8 @@ select {
 .dash-video-wrapper .right-area {
     border-radius: 17px;
     padding: 30px;
-    border: 1px solid #669B45;
-    background: #BEE469;
+    border: 1px solid #bb012e;
+    background: #bb012e;
 }
 
 .dash-video-wrapper .right-area h2 {
@@ -1625,7 +1625,7 @@ select {
 .dash-video-wrapper .right-area .action-area button {
     background: #ffffff;
     border-radius: 6px;
-    border: 1px solid #669B45;
+    border: 1px solid #bb012e;
     padding: 13px 25px;
     font-family: Mulish;
     font-weight: 700;
