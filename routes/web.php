@@ -67,10 +67,10 @@ Route::middleware(['auth', 'role:admin,superadmin,workforce_development'])->pref
 
     Route::delete('/session/delete/{id}', [ClassController::class, 'delete_session'])
         ->name('admin.session.delete');
-    Route::get('/session/managedomework/{id}', [ClassController::class, 'manage_domework'])->name('admin.session.managedomework');
-    Route::post('/session/update_domework_assignment/{id}', [ClassController::class, 'update_domework_assignment'])->name('admin.session.update_domework_assignment');
+    Route::get('/session/managehomework/{id}', [ClassController::class, 'manage_domework'])->name('admin.session.managedomework');
+    Route::post('/session/update_homework_assignment/{id}', [ClassController::class, 'update_domework_assignment'])->name('admin.session.update_domework_assignment');
 
-    Route::get('/domeworks/{session_id}', [ClassController::class, 'viewDomework'])->name('admin.view.domework');
+    Route::get('/homeworks/{session_id}', [ClassController::class, 'viewDomework'])->name('admin.view.domework');
 
     Route::middleware(['auth', 'role:admin,superadmin'])->group(function () {
         Route::get('/session/edit/{id}', [ClassController::class, 'edit_session'])->name('admin.session.edit');
@@ -87,13 +87,13 @@ Route::middleware(['auth', 'role:admin,superadmin,workforce_development'])->pref
     Route::post('/compensation/update-status', [ClassController::class, 'updateStatus']);
 
     /** Domework */
-    Route::get('/domework', [DomeworkController::class, 'index'])->name('admin.domework');
-    Route::get('/domework/create', [DomeworkController::class, 'create'])->name('admin.domework.create');
-    Route::post('/domework/store', [DomeworkController::class, 'store'])->name('admin.domework.store');
-    Route::delete('/domework/{domework}', [DomeworkController::class, 'destroy'])->name('admin.domework.destroy');
-    Route::get('/domework/edit/{id}', [DomeworkController::class, 'edit'])->name('admin.domework.edit');
-    Route::post('/domework/update/{domework}', [DomeworkController::class, 'update'])->name('admin.domework.update');
-    Route::get('/domework-answer-sheet', [DomeworkController::class, 'domeWorkAnswerSheet'])
+    Route::get('/homework', [DomeworkController::class, 'index'])->name('admin.domework');
+    Route::get('/homework/create', [DomeworkController::class, 'create'])->name('admin.domework.create');
+    Route::post('/homework/store', [DomeworkController::class, 'store'])->name('admin.domework.store');
+    Route::delete('/homework/{domework}', [DomeworkController::class, 'destroy'])->name('admin.domework.destroy');
+    Route::get('/homework/edit/{id}', [DomeworkController::class, 'edit'])->name('admin.domework.edit');
+    Route::post('/homework/update/{domework}', [DomeworkController::class, 'update'])->name('admin.domework.update');
+    Route::get('/homework-answer-sheet', [DomeworkController::class, 'domeWorkAnswerSheet'])
         ->name('admin.dome_answer_sheet');
     Route::get('/worksheet-pdf/{session_id}/{user_id}', [DomeworkController::class, 'downloadStudentWorksheetPdf'])->name('admin.worksheet.pdf');
 
@@ -126,9 +126,9 @@ Route::middleware(['auth', 'role:admin,superadmin,workforce_development'])->pref
     Route::get('/attendance/details', [AttendanceReportController::class, 'details'])->name('admin.attendance.details');
     Route::get('/attendance/user/{user_id}', [AttendanceReportController::class, 'userDetails'])->name('admin.attendance.user');
 
-    Route::get('/domework-stats', [DashboardController::class, 'getDomeworkStats'])->name('admin.domework.stats');
-    Route::get('/domework-details', [DashboardController::class, 'getDomeworkDetails'])->name('admin.domework.details');
-    Route::get('/user-domework-details', [DashboardController::class, 'showUserDomeworkDetails'])->name('admin.user.domework.details');
+    Route::get('/homework-stats', [DashboardController::class, 'getDomeworkStats'])->name('admin.domework.stats');
+    Route::get('/homework-details', [DashboardController::class, 'getDomeworkDetails'])->name('admin.domework.details');
+    Route::get('/user-homework-details', [DashboardController::class, 'showUserDomeworkDetails'])->name('admin.user.domework.details');
 });
 
 // SE
@@ -143,7 +143,7 @@ Route::middleware(['auth', 'role:se'])->prefix('se')->group(function () {
     Route::get('/resource-library', [SDashboardController::class, 'getresourcelibrary'])->name('se.resource_library');
     Route::post('/compensation-request', [SDashboardController::class, 'storeCompensation'])->name('se.compensation.store');
     Route::get('/notifications', [NotificationController::class, 'fetchAll'])->name('se.notifications');
-    Route::get('/assigned_domework', [SDashboardController::class, 'assigned_domework'])->name('se.assigned_domework');
+    Route::get('/assigned_homework', [SDashboardController::class, 'assigned_domework'])->name('se.assigned_domework');
     Route::get('/start_session/{session_id}', [SDashboardController::class, 'start_session'])->name('se.session.start');
     Route::get('/worksheet-pdf/{session_id}', [DomeworkController::class, 'downloadWorksheetPdf'])->name('worksheet.pdf');
 
@@ -167,16 +167,16 @@ Route::middleware(['auth', 'role:instructor'])->prefix('instructor')->group(func
         ->name('instructor.session.cancelled');
     // Route::delete('/session/delete/{id}', [ClassController::class, 'delete_session'])
     // ->name('instructor.session.delete');
-    Route::get('/session/managedomework/{id}', [ClassController::class, 'manage_domework'])->name('instructor.session.managedomework');
+    Route::get('/session/managehomework/{id}', [ClassController::class, 'manage_domework'])->name('instructor.session.managedomework');
     Route::get('/schedule_log', [ClassController::class, 'schedule_log'])->name('instructor.schedule_log');
     Route::get('/manage_schedule', [ClassController::class, 'manage_schedule'])->name('instructor.manageschedule');
-    Route::get('/session/managedomework/{id}', [ClassController::class, 'manage_domework'])->name('instructor.session.managedomework');
-    Route::post('/session/update_domework_assignment/{id}', [ClassController::class, 'update_domework_assignment'])->name('instructor.session.update_domework_assignment');
+    Route::get('/session/managehomework/{id}', [ClassController::class, 'manage_domework'])->name('instructor.session.managedomework');
+    Route::post('/session/update_homework_assignment/{id}', [ClassController::class, 'update_domework_assignment'])->name('instructor.session.update_domework_assignment');
 
 
     /** Domeworks */
-    Route::get('/domeworks', [ClassController::class, 'getInstructorDomeworks'])->name('instructor.domeworks');
-    Route::get('/domeworks/{session_id}', [ClassController::class, 'viewDomework'])->name('instructor.view.domework');
+    Route::get('/homeworks', [ClassController::class, 'getInstructorDomeworks'])->name('instructor.domeworks');
+    Route::get('/homeworks/{session_id}', [ClassController::class, 'viewDomework'])->name('instructor.view.domework');
 });
 
 Route::get('/states/{country}', [UserController::class, 'getStates']);
