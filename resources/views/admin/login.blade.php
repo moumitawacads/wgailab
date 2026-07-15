@@ -49,7 +49,7 @@
 						<img src="{{asset('frontend/images/cloud.png')}}" alt="" class="cloud cloud-1">
 						<img src="{{asset('frontend/images/cloud.png')}}" alt="" class="cloud cloud-2">
 					</div>
-					<p>© Copyright AI Lab. {{date('Y')}}.</p>
+					<p>© Copyright AI Workflow Lab. {{date('Y')}}.</p>
 				</div>
 			</div>
 		</div>

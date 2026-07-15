@@ -4,7 +4,7 @@
             
             <div class="col-sm-12 col-md-12 text-end">
             <div class="right-wrap d-flex align-items-center justify-content-center">
-                <p>© AI Lab for Business 2026</p>
+                <p>© AI Workflow Lab for Business 2026</p>
             </div>
                 <ul class="list-inline">
                     <!-- <li class="list-inline-item">

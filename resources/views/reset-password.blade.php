@@ -43,7 +43,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12 d-flex justify-content-end align-items-end">
-					<p class="login-footer-text">Urban Rez Solutions App © {{date('Y')}}</p>
+					<p class="login-footer-text">AI Workflow Lab App © {{date('Y')}}</p>
 				</div>
 			</div>
 		</div>
