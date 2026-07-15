@@ -14,7 +14,7 @@
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-in.html" />
 
-	<title>Wacads | AI Lab ADMIN</title>
+	<title>Wacads | AI Workflow Lab ADMIN</title>
 
 	<link href="{{ asset('assets/css/app.css')}}" rel="stylesheet">
 	<link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
