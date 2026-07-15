@@ -71,8 +71,8 @@ return [
     */
 
     /*'timezone' => 'UTC',*/
-    /*'timezone' => 'Asia/Kolkata',*/
-    'timezone' => 'America/Toronto',
+    'timezone' => 'Asia/Kolkata',
+    // 'timezone' => 'America/Toronto',
 
     /*
     |--------------------------------------------------------------------------
