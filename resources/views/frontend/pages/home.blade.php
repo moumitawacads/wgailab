@@ -17,19 +17,16 @@
                                     <h1>AI Workflow Lab for Business Transform Your Operations</h1>
                                     <p>Give your team the skills to automate workflows, streamline processes, and
                                         unlock new levels of efficiency.</p>
-                                    <p>The AI Workflow Lab delivers practical, instructor-led training that helps businesses
+                                    <p>The AI Workflow Lab delivers practical, instructor-led training that helps
+                                        businesses
                                         integrate AI into real operations — not someday, but today.</p>
                                     <div class="actions d-flex flex-wrap">
-                                        {{-- <a href="#cta" class="primary-btn">Enroll Your Team</a> --}}
-                                        <a href="javascript:void(0)"
-                                            class="primary-btn"
-                                            data-bs-toggle="modal"
+                                        <!-- <a href="#cta" class="primary-btn">Enroll Your Team</a> -->
+                                        <a href="javascript:void(0)" class="primary-btn" data-bs-toggle="modal"
                                             data-bs-target="#requestTeamModal">
                                             Enroll Your Team
                                         </a>
-                                        <a href="javascript:void(0)"
-                                            class="sec-btn"
-                                            data-bs-toggle="modal"
+                                        <a href="javascript:void(0)" class="sec-btn" data-bs-toggle="modal"
                                             data-bs-target="#requestDemoModal">
                                             Request a Demo
                                         </a>
@@ -41,16 +38,21 @@
                                         <li>Immediate ROI</li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center align-items-center">
+                                <div
+                                    class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center align-items-center">
                                     <div class="orbit">
                                         <div class="core d-flex flex-column align-items-center justify-content-center">
-                                            <img src="{{ asset('frontend/images/hi-middle.png') }}" alt="">
+                                            <img src="{{asset('frontend/images/hi-middle.png')}}" alt="">
                                             <span>AI Engine</span>
                                         </div>
-                                        <div class="node node-top"><img src="{{ asset('frontend/images/hi1.png')}}" alt=""> Operations</div>
-                                        <div class="node node-left"><img src="{{ asset('frontend/images/hi4.png')}}" alt=""> Workflow</div>
-                                        <div class="node node-right"><img src="{{ asset('frontend/images/hi2.png')}}" alt=""> AI Skills</div>
-                                        <div class="node node-bottom"><img src="{{ asset('frontend/images/hi3.png')}}" alt=""> Finance</div>
+                                        <div class="node node-top"><img src="{{asset('frontend/images/hi1.png')}}" alt=""> Operations
+                                        </div>
+                                        <div class="node node-left"><img src="{{asset('frontend/images/hi4.png')}}" alt=""> Workflow
+                                        </div>
+                                        <div class="node node-right"><img src="{{asset('frontend/images/hi2.png')}}" alt=""> AI Skills
+                                        </div>
+                                        <div class="node node-bottom"><img src="{{asset('frontend/images/hi3.png')}}" alt=""> Finance
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +63,7 @@
                     <div class="blue-banner-wrap">
                         <div class="container">
                             <div class="row justify-content-between align-items-center">
-                                <div class="col-md-6">
+                                <div class="col-md-12 col-lg-6">
                                     <div class="left-cnt">
                                         <h2>AI Workflow Lab</h2>
                                         <h3>Turn Everyday Tasks Into AI-Powered Workflows</h3>
@@ -75,14 +77,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <img src="{{ asset('frontend/images/slide-img.png')}}" alt="" class="w-100 main-img">
+                                <div class="col-md-12 col-lg-6">
+                                    <img src="{{asset('frontend/images/slide-img.png')}}" alt="" class="w-100 main-img">
                                 </div>
                             </div>
                         </div>
 
-                        <img src="{{ asset('frontend/images/flow 1.png')}}" alt="" class="flow position-absolute">
-                        <img src="{{ asset('frontend/images/Ellipse 1.png')}}" alt="" class="position-absolute round-bg">
+                        <img src="{{asset('frontend/images/flow 1.png')}}" alt="" class="flow position-absolute">
+                        <img src="{{asset('frontend/images/Ellipse 1.png')}}" alt="" class="position-absolute round-bg">
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -95,7 +97,7 @@
                             <a href="#full-testimonial" class="primary-btn">View our testimonial</a>
                         </div>
 
-                        <img src="{{ asset('frontend/images/ts-img.png')}}" alt="" class="w-100 ts-img">
+                        <img src="{{asset('frontend/images/ts-img.png')}}" alt="" class="w-100 ts-img">
                     </div>
                 </div>
             </div>
@@ -103,6 +105,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
+
 
     <!-- ABOUT -->
     <section class="about" id="about">
@@ -479,6 +482,49 @@
             </div>
         </div>
     </section>
+
+    @if(count($testimonials) > 0)
+        <section class="full-testimonial" id="full-testimonial">
+            <h2>Testimonial</h2>
+            <h3>What our clients say</h3>
+
+            <div class="swiper testimonialSwiper">
+                <div class="swiper-wrapper">
+                    @foreach($testimonials as $testimonial)
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <img src="{{ asset('frontend/images/quote.png')}}" alt="">
+                                <p>{{ $testimonial['content'] }}</p>
+                                <div class="user-detail-area d-flex align-items-start">
+                                    @if($testimonial['avatar'])
+                                        <img src="{{ asset('storage/' . $testimonial['avatar']) }}" alt="{{ $testimonial['name'] }}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                    @else
+                                        <img src="{{ asset('frontend/images/user.png')}}" alt="{{ $testimonial['name'] }}">
+                                    @endif
+                                    <h2>
+                                        {{ $testimonial['name'] }} 
+                                        <span>
+                                            {{ $testimonial['position'] }}
+                                            @if($testimonial['company'])
+                                                - {{ $testimonial['company'] }}
+                                            @endif
+                                        </span>
+                                    </h2>
+                                </div>
+                                @if($testimonial['rating'])
+                                    <div class="rating">
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <i class="fa fa-star {{ $i <= $testimonial['rating'] ? 'text-warning' : 'text-muted' }}"></i>
+                                        @endfor
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
    
 
     <!-- CTA -->

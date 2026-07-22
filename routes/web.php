@@ -28,11 +28,10 @@ use App\Http\Controllers\ResourceLibraryController;
 use App\Http\Controllers\ChecklistController;
 use App\Http\Controllers\DigitalCardController;
 use App\Http\Controllers\GoogleWalletController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    // return redirect('https://wacadsgroup.com/training', 301);
-    return view('frontend.pages.home');
-});
+// return redirect('https://wacadsgroup.com/training', 301);
+Route::get('/', [HomeController::class, 'index']);
 
 Route::middleware(['auth', 'role:admin,superadmin,workforce_development'])->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'loadadminDashboard'])->name('admin.dashboard');
