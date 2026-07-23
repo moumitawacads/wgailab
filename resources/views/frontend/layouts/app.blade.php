@@ -65,6 +65,38 @@
 
             effect: "slide", // Default slide effect
         });
+
+        const testimonialSwiper = new Swiper('.testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            centeredSlides: false,
+            loop: true,
+            speed: 700,
+            grabCursor: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 3.8,
+                    spaceBetween: 30,
+                },
+            },
+        });
     </script>
 </body>
 </html>

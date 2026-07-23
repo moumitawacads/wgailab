@@ -2335,3 +2335,7 @@ a {
    text-align: center;
    color: #1E1E21;
 }
+
+.testimonialSwiper .swiper-wrapper{
+   height: fit-content !important;
+}
