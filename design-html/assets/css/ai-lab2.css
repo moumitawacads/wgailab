@@ -2462,225 +2462,211 @@ footer .footer-top .right-wrap .footer-detail-wrap .detail-wrapper {
 
 
 .heroSwiper {
-    width: 100%;
-    align-items: stretch;
+   width: 100%;
+   align-items: stretch;
 }
 
 .heroSwiper .swiper-slide {
-    height: auto;
-    display: flex;
+   height: auto;
+   display: flex;
 }
 
 .heroSwiper .swiper-wrapper {
-    height: auto !important;
+   height: auto !important;
 }
 
 .hero .heroSwiper .orbit-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* vertically center content */
-    align-items: center;
-    /* horizontally center (optional) */
-    width: 100%;
-    height: 100%;
-    padding: 140px 0 90px;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   /* vertically center content */
+   align-items: center;
+   /* horizontally center (optional) */
+   width: 100%;
+   height: 100%;
+   padding: 140px 0 90px;
+   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%);
 }
 
 .hero .heroSwiper .blue-banner-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* vertically center content */
-    align-items: center;
-    /* horizontally center (optional) */
-    width: 100%;
-    height: 100%;
-    padding: 140px 0 90px;
-    background: radial-gradient(69.85% 258.82% at 87.33% 54.28%, #D5E5F9 40.38%, #D5E5F9 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   /* vertically center content */
+   align-items: center;
+   /* horizontally center (optional) */
+   width: 100%;
+   height: 100%;
+   padding: 140px 0 90px;
+   background: radial-gradient(69.85% 258.82% at 87.33% 54.28%, #D5E5F9 40.38%, #D5E5F9 100%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+   ;
+}
+
+.testimonial-slider {
+   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(209, 237, 255, 0.55) 69.71%, rgba(156, 206, 239, 0.55) 97.12%);
+   position: relative;
+   padding-top: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   /* vertically center content */
+   align-items: center;
+   /* horizontally center (optional) */
+   width: 100%;
+}
+
+.testimonial-slider h2 {
+   color: #BA012D;
+   font-family: Albert Sans;
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 100%;
+   letter-spacing: 0%;
+   text-align: center;
+   text-transform: uppercase;
+   margin: 0;
+}
+
+.testimonial-slider h3 {
+   color: #12121A;
+   font-family: Archivo;
+   font-weight: 600;
+   font-size: 30px;
+   line-height: 44px;
+   letter-spacing: 0%;
+   text-align: center;
+   margin: 0;
+   width: 100%;
+   max-width: 850px;
+   padding-top: 10px;
+   padding-bottom: 17px;
+}
+
+.testimonial-slider h4 {
+   margin: 0;
+   font-family: Albert Sans;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 100%;
+   letter-spacing: 0%;
+   text-align: center;
+   color: #12121A;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.testimonial-slider h4 span {
+   font-family: Albert Sans;
+   font-weight: 400;
+   font-size: 13px;
+   line-height: 120%;
+   letter-spacing: 8%;
+   text-align: center;
+   text-transform: uppercase;
+   color: #75757A;
+}
+
+.testimonial-slider a {
+   margin-top: 45px;
+}
+
+.ts-img {
+   position: absolute;
+   bottom: 40px;
 }
 
 
 .hero .heroSwiper .blue-banner-wrap .main-img {
-    position: relative;
-    z-index: 3;
+   position: relative;
+   z-index: 3;
 }
 
 .hero .heroSwiper .blue-banner-wrap .flow {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 99;
-    max-width: 100%;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   z-index: 99;
+   max-width: 100%;
 }
 
 .hero .heroSwiper .blue-banner-wrap .round-bg {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    z-index: 0;
-    max-width: 100%;
+   position: absolute;
+   top: 80px;
+   right: 0;
+   z-index: 0;
+   max-width: 100%;
 }
 
 .hero .heroSwiper .blue-banner-wrap .left-cnt h2 {
-    display: flex;
-    flex-direction: column;
-    font-family: Archivo;
-    font-weight: 600;
-    font-size: 65px;
-    line-height: 115.99999999999999%;
-    letter-spacing: 0%;
-    color: #000000;
+   display: flex;
+   flex-direction: column;
+   font-family: Archivo;
+   font-weight: 600;
+   font-size: 65px;
+   line-height: 115.99999999999999%;
+   letter-spacing: 0%;
+   color: #000000;
 }
 
 .hero .heroSwiper .blue-banner-wrap .left-cnt h2 span {
-    font-family: Archivo;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 118%;
-    letter-spacing: 0%;
-    color: #FF003D;
+   font-family: Archivo;
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 118%;
+   letter-spacing: 0%;
+   color: #FF003D;
 }
 
 .hero .heroSwiper .blue-banner-wrap .left-cnt h3 {
-    font-family: Archivo;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115.99999999999999%;
-    letter-spacing: 3%;
-    color: #000000;
-    background: #A8CAF3;
-    border: 1px solid #5D7BD0;
-    border-radius: 9px;
-    width: fit-content;
-    padding: 12px 10px;
+   font-family: Archivo;
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 115.99999999999999%;
+   letter-spacing: 3%;
+   color: #000000;
+   background: #A8CAF3;
+   border: 1px solid #5D7BD0;
+   border-radius: 9px;
+   width: fit-content;
+   padding: 12px 10px;
 }
 
 .hero .heroSwiper .blue-banner-wrap .left-cnt p {
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 167%;
-    letter-spacing: 0%;
-    color: #000000;
-    margin: 20px 0;
+   font-family: Inter;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 167%;
+   letter-spacing: 0%;
+   color: #000000;
+   margin: 20px 0;
 }
 
 
 
 .swiper-pagination-bullet {
-    background: #bb012e !important;
-    width: 12px !important;
-    height: 12px !important;
+   background: #bb012e !important;
+   width: 12px !important;
+   height: 12px !important;
 }
 
-.testimonial-card {
-    /* transform: scale(1); */
-    border: 1px solid #DFDFDF;
-    background: #FFFFFF;
-    border-radius: 15px;
-    padding: 30px;
+.hero {
+    position: relative;
+}
+
+/* .heroSwiper,
+.heroSwiper .swiper-wrapper,
+.heroSwiper .swiper-slide {
     height: 100%;
-}
+} */
 
-.testimonial-card p {
-    font-family: Albert Sans;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22.4px;
-    letter-spacing: 0px;
-    color: #828383;
-    border-bottom: 1px solid #DFDFDF;
-    padding-bottom: 24px;
-    margin-top: 20px;
-}
-
-.testimonial-card .user-detail-area {
-    gap: 15px;
-}
-
-.testimonial-card .user-detail-area img {
-    width: 35px;
-    height: 35px;
-    object-fit: cover;
-    border-radius: 100%;
-}
-
-.testimonial-card .user-detail-area h2 {
-    font-family: Albert Sans;
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0%;
-    color: #000000;
+.hero-banner-wrapper,
+.orbit-slide,
+.blue-banner-wrap,
+.testimonial-slider {
+    min-height: 90vh; /* or 850px if you don't want full screen */
     display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.testimonial-card .user-detail-area h2 span {
-    font-family: Albert Sans;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 170%;
-    letter-spacing: 0%;
-    color: #7D7D7D;
-}
-
-.full-testimonial {
-    padding: 60px 0;
-    overflow: hidden;
-}
-
-.full-testimonial .section-title {
-    text-align: center;
-    font-family: 'Albert Sans', sans-serif;
-    font-weight: 700;
-    font-size: 44px;
-    color: #000;
-    margin-bottom: 40px;
-}
-
-.testimonialSwiper {
-    padding: 20px 0 60px;
-    height: fit-content;
-    padding-bottom: 0;
-}
-
-.full-testimonial .swiper-slide {
-    /* opacity: 0.35;
-    transition: opacity .3s ease; */
-    height: auto;
-}
-
-.full-testimonial .swiper-slide-active {
-    opacity: 1;
-}
-
-/* the highlighted glow on the active/centered card */
-.swiper-slide-active .testimonial-card {
-    border: 1px solid #DFDFDF;
-    box-shadow: 0px 4px 22.3px 10px #BA012D14;
-}
-
-.full-testimonial h2 {
-    font-family: Albert Sans;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 22px;
-    letter-spacing: 0px;
-    text-align: center;
-    color: #BA012D;
-}
-
-.full-testimonial h3 {
-    font-family: Archivo;
-    font-weight: 600;
-    font-size: 52px;
-    line-height: 61.36px;
-    letter-spacing: 0px;
-    text-align: center;
-    color: #1E1E21;
+    align-items: center;
+    position: relative;
 }
