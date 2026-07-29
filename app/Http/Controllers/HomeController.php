@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\TestimonialsService;
+use App\Services\ContentsService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    protected $testimonialsService;
+    protected $contentsService;
 
-    public function __construct(TestimonialsService $testimonialsService)
+    public function __construct(ContentsService $contentsService)
     {
-        $this->testimonialsService = $testimonialsService;
+        $this->contentsService = $contentsService;
     }
     public function index()
     {
-        $testimonials = [];
-        $testimonialsResponse = $this->testimonialsService->getTestimonials();
-        if (isset($testimonialsResponse['success'])) {
-            $testimonials = $testimonialsResponse['data'];
+        $contents = [];
+        $contentsResponse = $this->contentsService->getContents();
+        if (isset($contentsResponse['success'])) {
+            $contents = $contentsResponse['data'];
         }
 
-        return view('frontend.pages.home', compact('testimonials'));
+        return view('frontend.pages.home', compact('contents'));
     }
 }

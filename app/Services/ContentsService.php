@@ -5,7 +5,7 @@ namespace App\Services;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
 
-class TestimonialsService
+class ContentsService
 {
     protected $client;
     protected $baseUrl;
@@ -16,10 +16,10 @@ class TestimonialsService
         $this->baseUrl = env('WG_BASE_URL');
     }
 
-    public function getTestimonials()
+    public function getContents()
     {
         try {
-            $response = $this->client->get("{$this->baseUrl}/api/v1/testimonials");
+            $response = $this->client->get("{$this->baseUrl}/api/v1/contents");
 
             return json_decode($response->getBody(), true);
         } catch (\Exception $e) {
