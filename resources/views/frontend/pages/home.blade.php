@@ -54,11 +54,11 @@
                                                 @foreach($contents['content']['hero']['slides'][0]['orbit_nodes'] ?? [] as $orbit)
                                                     @if($orbit['position'] == 'middle')
                                                         <div class="core d-flex flex-column align-items-center justify-content-center">
-                                                            <img src="{{asset('storage/'. $orbit['image'])}}" alt="">
+                                                            <img src="{{$orbit['image']}}" alt="">
                                                             <span>{{$orbit['text']}}</span>
                                                         </div>
                                                     @else
-                                                        <div class="node node-{{$orbit['position']}}"><img src="{{asset('storage/'. $orbit['image'])}}" alt="">{{$orbit['text']}}
+                                                        <div class="node node-{{$orbit['position']}}"><img src="{{$orbit['image']}}" alt="">{{$orbit['text']}}
                                                         </div>
                                                     @endif
                                                 @endforeach
@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="col-md-12 col-lg-6">
                                         @if(!empty($contents['content']['hero']['slides'][1]['image']))
-                                            <img src="{{asset('storage/'. $contents['content']['hero']['slides'][1]['image'])}}" alt="" class="w-100 main-img">
+                                            <img src="{{$contents['content']['hero']['slides'][1]['image']}}" alt="" class="w-100 main-img">
                                         @else
                                             <img src="{{asset('Assets/Images/slide-img.png')}}" alt="" class="w-100 main-img">
                                         @endif
@@ -95,13 +95,13 @@
                             </div>
 
                             @if(!empty($contents['content']['hero']['slides'][1]['flow_image']))
-                                <img src="{{asset('storage/'. $contents['content']['hero']['slides'][1]['flow_image'])}}" alt="" class="flow position-absolute">
+                                <img src="{{$contents['content']['hero']['slides'][1]['flow_image']}}" alt="" class="flow position-absolute">
                             @else
                                 <img src="{{asset('Assets/Images/flow 1.png')}}" alt="" class="flow position-absolute">
                             @endif
 
                             @if(!empty($contents['content']['hero']['slides'][1]['ellipse_image']))
-                                <img src="{{asset('storage/'. $contents['content']['hero']['slides'][1]['ellipse_image'])}}" alt="" class="position-absolute round-bg">
+                                <img src="{{$contents['content']['hero']['slides'][1]['ellipse_image']}}" alt="" class="position-absolute round-bg">
                             @else
                                 <img src="{{asset('Assets/Images/Ellipse 1.png')}}" alt="" class="position-absolute round-bg">
                             @endif
@@ -117,7 +117,7 @@
                             </div>
 
                             @if(!empty($contents['content']['hero']['slides'][2]['testimonial_image']))
-                                <img src="{{asset('storage/'. $contents['content']['hero']['slides'][2]['testimonial_image'])}}" alt="" class="w-100 ts-img">
+                                <img src="{{$contents['content']['hero']['slides'][2]['testimonial_image']}}" alt="" class="w-100 ts-img">
                             @else
                                 <img src="{{asset('Assets/Images/ts-img.png')}}" alt="" class="w-100 ts-img">
                             @endif
@@ -160,7 +160,7 @@
                                         <div class="step d-flex flex-column align-items-center">
                                             <span>
                                                 @if(!empty($step['icon']))
-                                                    <img src="{{ asset('storage/' . $step['icon']) }}" alt="{{ $step['title'] ?? '' }}">
+                                                    <img src="{{ $step['icon'] }}" alt="{{ $step['title'] ?? '' }}">
                                                 @else
                                                     <img src="{{ asset('frontend/images/ad' . ($loop->iteration) . '.png') }}" alt="">
                                                 @endif
@@ -197,7 +197,7 @@
                             <article class="card h-100">
                                 @if(!empty($item['icon']))
                                     <span class="icon">
-                                        <img src="{{ asset('storage/' . $item['icon']) }}" alt="{{ $item['title'] ?? '' }}">
+                                        <img src="{{ $item['icon'] }}" alt="{{ $item['title'] ?? '' }}">
                                     </span>
                                 @else
                                     <span class="icon">
@@ -300,7 +300,7 @@
                                 @endif
                                 <span class="icon">
                                     @if(!empty($item['icon']))
-                                        <img src="{{ asset('storage/' . $item['icon']) }}" alt="{{ $item['title'] ?? '' }}">
+                                        <img src="{{ $item['icon'] }}" alt="{{ $item['title'] ?? '' }}">
                                     @else
                                         <img src="{{ asset('frontend/images/ti' . ($loop->iteration) . '.png') }}" alt="">
                                     @endif
@@ -330,7 +330,7 @@
                                         <span class="badge">{{ $item['badge'] }}</span>
                                     @endif
                                     @if(!empty($item['image']))
-                                        <img src="{{ asset('storage/' . $item['image']) }}" 
+                                        <img src="{{ $item['image'] }}" 
                                             alt="{{ $item['title'] ?? '' }}" />
                                     @else
                                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=70"
@@ -383,7 +383,7 @@
                             <article class="card h-100">
                                 <span class="icon">
                                     @if(!empty($item['icon']))
-                                        <img src="{{ asset('storage/' . $item['icon']) }}" alt="{{ $item['title'] ?? '' }}">
+                                        <img src="{{ $item['icon'] }}" alt="{{ $item['title'] ?? '' }}">
                                     @else
                                         <img src="{{ asset('frontend/images/w' . ($loop->iteration) . '.png') }}" alt="">
                                     @endif
@@ -412,7 +412,7 @@
                                 <p>{{ $testimonial['content'] }}</p>
                                 <div class="user-detail-area d-flex align-items-start">
                                     @if($testimonial['avatar'])
-                                        <img src="{{ asset('storage/' . $testimonial['avatar']) }}" alt="{{ $testimonial['name'] }}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                        <img src="{{ $testimonial['avatar'] }}" alt="{{ $testimonial['name'] }}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
                                     @else
                                         <img src="{{ asset('frontend/images/user.png')}}" alt="{{ $testimonial['name'] }}">
                                     @endif
