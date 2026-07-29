@@ -79,7 +79,8 @@
                                             <h3>{{$contents['content']['hero']['slides'][1]['subtitle'] ?? ''}}</h3>
                                             <p>{{$contents['content']['hero']['slides'][1]['description'] ?? ''}}</p>
                                             <div class="actions d-flex flex-wrap">
-                                                <a href="{{$contents['content']['hero']['slides'][1]['button_primary_url'] ?? '#cta'}}" class="primary-btn">{{$contents['content']['hero']['slides'][1]['button_primary_text'] ?? ''}}</a>
+                                                <a href="{{$contents['content']['hero']['slides'][1]['button_primary_url'] ?? '#cta'}}" class="primary-btn" data-bs-toggle="modal"
+                                                data-bs-target="#requestTeamModal">{{$contents['content']['hero']['slides'][1]['button_primary_text'] ?? ''}}</a>
                                                 <a href="{{$contents['content']['hero']['slides'][1]['button_secondary_url'] ?? '#cta'}}" class="sec-btn">{{$contents['content']['hero']['slides'][1]['button_secondary_text'] ?? ''}}</a>
                                             </div>
                                         </div>
